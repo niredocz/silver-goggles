@@ -6,14 +6,18 @@
     @extend .mr-2;
   }
 
+  > .btn-toolbar {
+    @extend .mt-3;
+    @extend .mr-3;
+  }
+
   > .btn-group,
   >  .btn-group-vertical {
     @extend .mt-2;
     @extend .mr-2;
   }
-
-  .progress {
-    margin-top: 1.5rem;
+  .circle-progress {
+    @extend .mt-2;
   }
 
   > h2,
@@ -31,8 +35,26 @@
     @extend .mr-2;
     margin-bottom: 0.5rem;
   }
-}
 
+  nav {
+
+    &:last-child {
+      .breadcrumb {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+
+  .circle-progress {
+    padding: 15px;
+  }
+
+  .circle-progress-block {
+    @extend .mb-3;
+    @extend .px-2;
+  }
+}
 .documentation {
   padding-top: 0;
   max-width: 100%;
@@ -41,72 +63,34 @@
     min-height: calc(100vh - #{$footer-height});
   }
 }
-
+.doc-table-contents,
 .doc-header {
   position: fixed;
+}
+.doc-header {
   padding-top: 24px;
   padding-bottom: 24px;
   z-index: 2;
   background: $content-bg;
+  z-index: 999;
+  @media screen and (max-width: 991px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
 }
 
 .doc-content {
   padding-top: 157px;
 }
 
-.dashboard-chart-legend {
-  list-style-type: none;
-  padding-left: 0;
-  li {
-    display: inline;
-    span {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 7px;
-    }
-    &:not(:first-child) {
-      span {
-        margin-left: 25px;
-        @media(max-width: 576px) {
-          margin-left: 13px;
-        }
-      }
+.doc-table-contents {
+  overflow: auto;
+  max-height: calc(100% - 157px);
+  ul {
+    li {
+      margin-top: 10px;
     }
   }
 }
 
-.dashboard-tabs {
-  .item {
-    border-bottom: 1px solid $border-color;
-    @media (min-width: 577px) {
-      border-bottom: 0;
-    }
-  }
-}
-
-.nav-tabs {
-	border: 1px solid $border-color;
-	.nav-link {
-		background: $nav-tabs-link-bg;
-		color: $nav-tabs-link-color;
-		border-radius: 0;
-		border: 1px solid $border-color;
-		padding: 1rem 1.5rem .2rem 1.5rem;
-		@media (max-width: 767px) {
-			padding: 1rem .5rem .2rem .5rem;
-		}
-	}
-	.nav-item {
-		.nav-link {
-			border: 0;
-			background: transparent;
-			&.active {
-				border: 0;
-				border-bottom: 3px solid #5646ff;
-				color: theme-color(primary);
-			}
-		}
-	}
-}

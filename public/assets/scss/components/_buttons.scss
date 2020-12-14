@@ -4,8 +4,9 @@
   font-size: $btn-font-size;
   line-height: 1;
   font-weight: 400;
+  border-radius:4px;
   i {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   &.btn-rounded {
     @include border-radius(50px);
@@ -22,13 +23,13 @@
   }
   /* Buttons with only icons */
   &.btn-icon {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     padding: 0;
   }
   /* Buttons with icon and text */
   &.btn-icon-text {
-    .btn-icon-prepend {
+    .btn-icon-prepend { 
       margin-right: .5rem;
     }
     .btn-icon-append {
@@ -70,6 +71,20 @@
 @each $color, $value in $theme-colors {
   .btn-inverse-#{$color} {
     @include button-inverse-variant($value);
+  }
+  .btn-#{$color} {
+    &,
+    &:hover {
+      box-shadow: 0 2px 2px 0 rgba(theme-color($color), .14), 
+                0 3px 1px -2px rgba(theme-color($color), .2), 
+                0 1px 5px 0 rgba(theme-color($color), .12)
+    }
+  }
+}
+/* outlinw buttons */
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
   }
   .btn-#{$color} {
     &,

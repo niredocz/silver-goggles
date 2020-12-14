@@ -13,10 +13,10 @@
   }
   .card-title {
     color: $card-title-color;
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    font-size: .875rem;
-    font-weight: bold; 
+    margin-bottom: .5rem;
+    text-transform: capitalize;
+    font-size: 0.875rem;
+    font-weight:bold;
   }
   .card-subtitle {
     @extend .text-gray;

@@ -31,7 +31,7 @@
     background-image: none;
     border-color: rgba($color, 0);
     &:not(.btn-inverse-light) {
-      color: $color;      
+      color: darken($color,30%);      
     }
     @include hover {
       color: $color-hover;
@@ -58,3 +58,14 @@
       border-color: $color;
     }
 }
+@mixin button-outline-variant($color, $color-hover: $white) {
+  color: $color;
+  border-color: $color;
+  &:not(.btn-outline-light) {
+    color:darken($color,30%);       
+  }
+  &:not(.btn-outline-secondary) {
+    color:darken($color,30%);     
+  }
+}
+

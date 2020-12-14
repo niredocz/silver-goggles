@@ -40,4 +40,23 @@
   &.table-bordered {
     border-top: 1px solid $border-color;
   }
+  &.table-header-bg {
+    th {
+      background: theme-color(light);
+      font-weight:bold;
+    }
+    td {
+      color: theme-color(dark);
+      .flag-icon {
+        width: 2rem;
+        line-height: 2rem;
+      }
+      .progress {
+        width: 200px;
+        @media screen and (max-width: 991px) { 
+          width: 100%;
+        }
+      }
+    }
+  }
 }

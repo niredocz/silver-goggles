@@ -1,247 +1,348 @@
 (function($) {
   'use strict';
   $(function() {
-
-    if ($('#cash-deposits-chart').length) {
-      var cashDepositsCanvas = $("#cash-deposits-chart").get(0).getContext("2d");
-      var data = {
-        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8"],
-        datasets: [
-          {
-            label: 'Returns',
-            data: [27, 35, 30, 40, 52, 48, 54, 46, 70],
-            borderColor: [
-              '#ff4747'
-            ],
-            borderWidth: 2,
-            fill: false,
-            pointBackgroundColor: "#fff"
-          },
-          {
-            label: 'Sales',
-            data: [29, 40, 37, 48, 64, 58, 70, 57, 80],
-            borderColor: [
-              '#4d83ff'
-            ],
-            borderWidth: 2,
-            fill: false,
-            pointBackgroundColor: "#fff"
-          },
-          {
-            label: 'Loss',
-            data: [90, 62, 80, 63, 72, 62, 40, 50, 38],
-            borderColor: [
-              '#ffc100'
-            ],
-            borderWidth: 2,
-            fill: false,
-            pointBackgroundColor: "#fff"
-          }
-        ]
-      };
-      var options = {
-        scales: {
-          yAxes: [{
-            display: true,
-            gridLines: {
-              drawBorder: false,
-              lineWidth: 1,
-              color: "#e9e9e9",
-              zeroLineColor: "#e9e9e9",
-            },
-            ticks: {
-              min: 0,
-              max: 100,
-              stepSize: 20,
-              fontColor: "#6c7383",
-              fontSize: 16,
-              fontStyle: 300,
-              padding: 15
-            }
-          }],
-          xAxes: [{
-            display: true,
-            gridLines: {
-              drawBorder: false,
-              lineWidth: 1,
-              color: "#e9e9e9",
-            },
-            ticks : {
-              fontColor: "#6c7383",
-              fontSize: 16,
-              fontStyle: 300,
-              padding: 15
-            }
-          }]
-        },
-        legend: {
-          display: false
-        },
-        legendCallback: function(chart) {
-          var text = [];
-          text.push('<ul class="dashboard-chart-legend">');
-          for(var i=0; i < chart.data.datasets.length; i++) {
-            text.push('<li><span style="background-color: ' + chart.data.datasets[i].borderColor[0] + ' "></span>');
-            if (chart.data.datasets[i].label) {
-              text.push(chart.data.datasets[i].label);
-            }
-          }
-          text.push('</ul>');
-          return text.join("");
-        },
-        elements: {
-          point: {
-            radius: 3
-          },
-          line :{
-            tension: 0
-          }
-        },
-        stepsize: 1,
-        layout : {
-          padding : {
-            top: 0,
-            bottom : -10,
-            left : -10,
-            right: 0
-          }
-        }
-      };
-      var cashDeposits = new Chart(cashDepositsCanvas, {
-        type: 'line',
-        data: data,
-        options: options
-      });
-      document.getElementById('cash-deposits-chart-legend').innerHTML = cashDeposits.generateLegend();
-    }
-
-    if ($('#total-sales-chart').length) {
-      var totalSalesChartCanvas = $("#total-sales-chart").get(0).getContext("2d");
-
-      var data = {
-        labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",'10', '11','12', '13', '14', '15','16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26','27','28','29', '30','31', '32', '33', '34', '35', '36', '37','38', '39', '40'],
-        datasets: [
-          {
-            label: '2019',
-            data: [42, 42, 30, 30, 18, 22, 16, 21, 22, 22, 22, 20, 24, 20, 18, 22, 30, 34 ,32, 33, 33, 24, 32, 34 , 30, 34, 19 ,34, 18, 10, 22, 24, 20, 22, 20, 21, 10, 10, 5, 9, 14 ],
-            borderColor: [
-              'transparent'
-            ],
-            borderWidth: 2,
-            fill: true,
-            backgroundColor: "rgba(47,91,191,0.77)"
-          },
-          {
-            label: '2018',
-            data: [35, 28, 32, 42, 44, 46, 42, 50, 48, 30, 35, 48, 42, 40, 54, 58, 56, 55, 59, 58, 57, 60, 66, 54, 38, 40, 42, 44, 42, 43, 42, 38, 43, 41, 43, 50, 58 ,58, 68, 72, 72 ],
-            borderColor: [
-              'transparent'
-            ],
-            borderWidth: 2,
-            fill: true,
-            backgroundColor: "rgba(77,131,255,0.77)"
-          },
-          {
-            label: 'Past years',
-            data: [98, 88, 92, 90, 98, 98, 90, 92, 78, 88, 84, 76, 80, 72, 74, 74, 88, 80, 72, 62, 62, 72, 72, 78, 78, 72, 75, 78, 68, 68, 60, 68, 70, 75, 70, 80, 82, 78, 78, 84, 82 ],
-            borderColor: [
-              'transparent'
-            ],
-            borderWidth: 2,
-            fill: true,
-            backgroundColor: "rgba(77,131,255,0.43)"
-          }
-        ]
-      };
-      var options = {
-        scales: {
-          yAxes: [{
+    var dataBar = {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+      datasets: [{
+        label: 'Customers',
+        data: [5, 10, 15, 12, 10, 8, 6, 4],
+        backgroundColor: [
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#fc381d',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+        ],
+        borderColor: [
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#fc381d',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+        ],
+        borderWidth: 1,
+        fill: false
+      }]
+    };
+    var optionsBar = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
             display: false,
-            gridLines: {
-              drawBorder: false,
-              lineWidth: 1,
-              color: "#e9e9e9",
-              zeroLineColor: "#e9e9e9",
-            },
-            ticks: {
-              display : true,
-              min: 0,
-              max: 100,
-              stepSize: 10,
-              fontColor: "#6c7383",
-              fontSize: 16,
-              fontStyle: 300,
-              padding: 15
-            }
-          }],
-          xAxes: [{
-            display: false,
-            gridLines: {
-              drawBorder: false,
-              lineWidth: 1,
-              color: "#e9e9e9",
-            },
-            ticks : {
-              display: true,
-              fontColor: "#6c7383",
-              fontSize: 16,
-              fontStyle: 300,
-              padding: 15
-            }
-          }]
-        },
-        legend: {
-          display: false
-        },
-        legendCallback: function(chart) {
-          var text = [];
-          text.push('<ul class="dashboard-chart-legend mb-0 mt-4">');
-          for(var i=0; i < chart.data.datasets.length; i++) {
-            text.push('<li><span style="background-color: ' + chart.data.datasets[i].backgroundColor + ' "></span>');
-            if (chart.data.datasets[i].label) {
-              text.push(chart.data.datasets[i].label);
-            }
-          }
-          text.push('</ul>');
-          return text.join("");
-        },
-        elements: {
-          point: {
-            radius: 0
+            
           },
-          line :{
-            tension: 0
+          gridLines: {
+            display: false,
+            drawBorder: false
           }
-        },
-        stepsize: 1,
-        layout : {
-          padding : {
-            top: 0,
-            bottom : 0,
-            left : 0,
-            right: 0
+        }],
+        xAxes: [{
+          ticks: {
+            beginAtZero: true,
+            display: false,
+          },
+          gridLines: {
+            display: false,
+            drawBorder: false
           }
-        }
-      };
-      var totalSalesChart = new Chart(totalSalesChartCanvas, {
-        type: 'line',
-        data: data,
-        options: options
-      });
-      document.getElementById('total-sales-chart-legend').innerHTML = totalSalesChart.generateLegend();
-    }
-
-    $('#recent-purchases-listing').DataTable({
-      "aLengthMenu": [
-        [5, 10, 15, -1],
-        [5, 10, 15, "All"]
-      ],
-      "iDisplayLength": 10,
-      "language": {
-        search: ""
+        }]
       },
-      searching: false, paging: false, info: false
+      legend: {
+        display: false
+      },
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
+      tooltips: {
+        enabled: false
+      }
+  
+    };
+    if ($("#customers").length) {
+      var barChartCanvas = $("#customers").get(0).getContext("2d");
+      // This will get the first returned node in the jQuery collection.
+      var ctx = document.getElementById("customers");
+      ctx.height = 60;
+      var barChart = new Chart(barChartCanvas, {
+        type: 'bar',
+        data: dataBar,
+        options: optionsBar
+      });
+    }
+    var dataBarOrder = {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+      datasets: [{
+        label: 'Customers',
+        data: [5, 5, 5, 5, 10, 5, 5, 5],
+        backgroundColor: [
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#51c81c',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+        ],
+        borderColor: [
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+          '#51c81c',
+          '#dee5ef',
+          '#dee5ef',
+          '#dee5ef',
+        ],
+        borderWidth: 1,
+        fill: false
+      }]
+    };
+    var optionsBarOrder = {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true,
+            display: false,
+            
+          },
+          gridLines: {
+            display: false,
+            drawBorder: false
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            beginAtZero: true,
+            display: false,
+          },
+          gridLines: {
+            display: false,
+            drawBorder: false
+          }
+        }]
+      },
+      legend: {
+        display: false
+      },
+      elements: {
+        point: {
+          radius: 0
+        }
+      },
+      tooltips: {
+        enabled: false
+      }
+  
+    };
+    if ($("#orders").length) {
+      var barChartCanvas = $("#orders").get(0).getContext("2d");
+      // This will get the first returned node in the jQuery collection.
+      var ctx = document.getElementById("orders");
+      ctx.height = 60;
+      var barChart = new Chart(barChartCanvas, {
+        type: 'bar',
+        data: dataBarOrder,
+        options: optionsBarOrder
+      });
+    }
+    var webAudienceMetricsSatackedData = {
+      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+      datasets: [
+        {
+          label: 'Sessions',
+          data: [24000,83123,24000,36000,20000,39000,72000,44000,18000],
+          backgroundColor: [
+            '#3794fc','#3794fc','#3794fc','#3794fc','#3794fc','#3794fc','#3794fc','#3794fc',
+          ],
+          borderColor: [
+            '#3794fc','#3794fc','#3794fc','#3794fc','#3794fc','#3794fc','#3794fc','#3794fc',
+          ],
+          borderWidth: 1,
+          fill: false
+        },
+        {
+        label: 'New Users',
+        data: [35000,3333,58000,32000,15000,37000,41000,32000,22000],
+        backgroundColor: [
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+        ],
+        borderColor: [
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+          '#a037fc',
+        ],
+        borderWidth: 1,
+        fill: false
+      },
+      {
+        label: 'Page Views',
+        data: [24000,16869,47000,19000,25000,12000,32000,25000,22000],
+        backgroundColor: [
+          '#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef',
+        ],
+        borderColor: [
+          '#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef',
+        ],
+        borderWidth: 1,
+        fill: false
+      },]
+    };
+    var webAudienceMetricsSatackedOptions = {
+      scales: {
+        xAxes: [{
+          barPercentage: 0.2,
+          stacked: true,
+          gridLines: {
+            display: true, //this will remove only the label
+						drawBorder: false,
+						color: "#e5e9f2",
+          },
+        }],
+        yAxes: [{
+          stacked: true,
+					display: false,
+					gridLines: {
+            display: false, //this will remove only the label
+            drawBorder: false
+          },
+        }]
+      },
+      legend: {
+        display: false,
+        position: "bottom"
+      },
+      legendCallback: function(chart) {	
+				var text = [];
+        text.push('<div class="row">');
+        for (var i = 0; i < chart.data.datasets.length; i++) {
+          text.push('<div class="col-lg-4"><div class="row"><div class="col-sm-12"><h5 class="font-weight-bold text-dark mb-1">' + chart.data.datasets[i].data[1].toLocaleString() + '</h5></div></div><div class="row align-items-center"><div class="col-2"><span class="legend-label" style="background-color:' + chart.data.datasets[i].backgroundColor[i] + '"></span></div><div class="col-9 pl-0"><p class="text-muted m-0 ml-1">' + chart.data.datasets[i].label + '</p></div></div>');
+          text.push('</div>');
+        }
+        text.push('</div>');
+        return text.join("");
+      },
+      elements: {
+        point: {
+          radius: 0
+        }
+      } 
+    };
+    if ($("#web-audience-metrics-satacked").length) {
+      var barChartCanvas = $("#web-audience-metrics-satacked").get(0).getContext("2d");
+      // This will get the first returned node in the jQuery collection.
+      var ctx = document.getElementById("web-audience-metrics-satacked");
+      ctx.height = 88;
+      var barChart = new Chart(barChartCanvas, {
+        type: 'bar',
+        height: '200',
+        data: webAudienceMetricsSatackedData,
+        options: webAudienceMetricsSatackedOptions
+      });
+      document.getElementById('chart-legends').innerHTML = barChart.generateLegend();
+		}
+		var marketTrendsSatackedData = {
+      labels: ["S", "M", "T", "W", "T", "F", "S"],
+      datasets: [
+        {
+          label: 'Total Income',
+          data: [86000,83320,36000,80000,92000,58000,76000],
+          backgroundColor: [
+            '#51c81c','#51c81c','#51c81c','#51c81c','#51c81c','#51c81c','#51c81c','#51c81c',
+          ],
+          borderColor: [
+            '#51c81c','#51c81c','#51c81c','#51c81c','#51c81c','#51c81c','#51c81c','#51c81c',
+          ],
+          borderWidth: 1,
+          fill: false
+        },
+      	{
+        label: 'Total Expenses',
+        data: [59000,32370,84000,65000,53000,87000,60900],
+        backgroundColor: [
+          '#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef',
+        ],
+        borderColor: [
+          '#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef','#dee5ef',
+        ],
+        borderWidth: 1,
+        fill: false
+      },]
+    };
+    var marketTrendsSatackedOptions = {
+      scales: {
+        xAxes: [{
+          barPercentage: 0.35,
+          stacked: true,
+          gridLines: {
+            display: false, //this will remove only the label
+						drawBorder: false,
+						color: "#e5e9f2",
+          },
+        }],
+        yAxes: [{
+          stacked: true,
+					display: false,
+					gridLines: {
+            display: false, //this will remove only the label
+            drawBorder: false
+          },
+        }]
+      },
+      legend: {
+        display: false,
+        position: "bottom"
+      },
+      legendCallback: function(chart) {	
+				var text = [];
+        text.push('<div class="row">');
+        for (var i = 0; i < chart.data.datasets.length; i++) {
+          text.push('<div class="col-6 "><div class="row"><div class="col-sm-12 ml-sm-0 mr-sm-0 pr-md-0"><h5 class="font-weight-bold text-dark">$ ' + chart.data.datasets[i].data[1].toLocaleString() + '</h5></div></div><div class="row align-items-center"><div class="col-12"><p class="text-muted m-0">' + chart.data.datasets[i].label + '</p></div></div>');
+          text.push('</div>');
+        }
+        text.push('</div>');
+        return text.join("");
+      },
+      elements: {
+        point: {
+          radius: 0
+        }
+      } 
+    };
+    if ($("#marketTrendssatacked").length) {
+      var barChartCanvas = $("#marketTrendssatacked").get(0).getContext("2d");
+      // This will get the first returned node in the jQuery collection.
+      var barChart = new Chart(barChartCanvas, {
+        type: 'bar',
+        data: marketTrendsSatackedData,
+        options: marketTrendsSatackedOptions
+      });
+      document.getElementById('chart-legends-market-trend').innerHTML = barChart.generateLegend();
+    }
+    $('#over-all-rating').barrating({
+      theme: 'fontawesome-stars',
+      showSelectedRating: false
     });
-
   });
 })(jQuery);

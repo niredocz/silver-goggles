@@ -41,14 +41,14 @@ $colors: (
 
 
 $theme-colors: (
-  primary:         #4d83ff,
-  secondary:       #686868,
-  success:         #71c016,
-  info:            #7859df,
-  warning:         #ffc100,
-  danger:          #ff4747,
-  light:           #f8f9fa,
-  dark:            #282f3a
+  primary:         #ec37fc,
+  secondary:       #e4e6f6,
+  success:         #51c81c,
+  info:            #3794fc,
+  warning:         #fcb41d,
+  danger:          #fc381d,
+  light:           #dee5ef,
+  dark:            #001737
 );
 
 $theme-gradient-colors: (
@@ -65,8 +65,8 @@ $theme-gradient-colors: (
 ////////// COLOR SYSTEM //////////
 
 ////////// COLOR VARIABLES //////////
-$content-bg: #f3f3f3;
-$border-color: #f3f3f3;
+$content-bg: #f4f7fa;
+$border-color: #e4e6f6;
 
 ////////// COLOR VARIABLES //////////
 
@@ -91,26 +91,26 @@ $social-colors: (
 
 ////////// FONTS//
 
-$type:     'Roboto', sans-serif;
+$type1:     'Karla', sans-serif;
 
 $default-font-size: .875rem; // 14px as base font size
 
-$text-muted: #686868;
-$body-color: #000;
+$text-muted: #666666;
+$body-color: #666666;
 
 ////////// FONT VARIABLES //////////
 
 ///////// FOOTER ////////
 $footer-height: 75px;
-$footer-bg: $content-bg;
+$footer-bg: #fff;
 $footer-color: color(dark);
 ///////// FOOTER ////////
 
 ///////// BUTTONS ////////
 
 $button-fixed-width:        150px;
-$btn-padding-y:       .75rem;
-$btn-padding-x:       1.5rem;
+$btn-padding-y:       0.687rem;
+$btn-padding-x:       0.875rem;
 $btn-line-height:     1;
 
 $btn-padding-y-xs:    .5rem;
@@ -135,16 +135,25 @@ $btn-border-radius-lg:      .1875rem;
 ///////// BUTTONS ////////
 
 
+
+////////// TOOLTIP VARIABLES //////////
+
+//default styles
+$tooltip-font-size:     .75rem;
+$tooltip-padding-y:     .4rem;
+$tooltip-padding-x:     .75rem;
+$tooltip-border-radius: .375rem;
+
+////////// TOOLTIP VARIABLES //////////
+
+
+
 /////////  FORMS /////////
 
 $input-bg:                color(white);
 $input-border-radius:     2px;
-$input-placeholder-color: #c9c8c8;
+$input-placeholder-color: #666666;
 $input-font-size: .875rem;
-
-$input-height :           2.875rem;
-$input-height-sm :           2.25rem;
-$input-height-lg :           3.5rem;
 
 $input-padding-y:       .875rem;
 $input-padding-x:       1.375rem;
@@ -162,7 +171,7 @@ $input-padding-x-lg:    1.94rem;
 ///////// FORMS /////////
 
 ////////  DROPDOWNS ///////
-
+$dropdown-color: $body-color;
 $dropdown-border-color: $border-color;
 $dropdown-divider-bg:   $border-color;
 $dropdown-link-color:   $body-color;
@@ -171,10 +180,10 @@ $dropdown-link-hover-bg: #eaeaf1;
 ////////  DROPDOWNS ///////
 
 //////// TABLES ////////
-
+$table-color: $body-color;
 $table-accent-bg: $content-bg;
 $table-hover-bg:  #eaeaf1;
-$table-cell-padding: 1.25rem .9375rem;
+$table-cell-padding: 1rem 1rem;
 $table-border-color: $border-color;
 
 $table-inverse-bg: #2a2b32;
@@ -188,65 +197,68 @@ $table-inverse-color: color(white);
 
 $border-property: 1px solid $border-color;
 $card-spacing-y: 1.875rem;
-$card-padding-y: 1.5rem;
+$card-padding-y: 1.875rem;
 $card-padding-x: 1.875rem;
 $card-border-radius: 0;
-$card-border-color: #e7eaed;
+$card-border-color: $border-color;
 $card-box-shadow: none;
-$card-title-color: #4a4a4a;
+$card-title-color: #001737;
 $card-description-color: #76838f;
-$grid-gutter-width: 20px;
+$grid-gutter-width: 1rem;
 $action-transition-duration: 0.25s;
 $action-transition-timing-function: ease;
+$grid-margin: 1rem;
 ////////// OTHER VARIABLES //////////
 
 
 
-/////////  TABS VARIABLES //////////
-$nav-tabs-border-color:             #ebedf2;
-$nav-tabs-link-bg:                  #f6f8fa;
-$nav-tabs-link-color:               #000000;
-$nav-tabs-link-hover-border-color:  $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-border-color;
-$nav-tabs-link-active-color:        $body-color;
-$nav-tabs-link-active-bg:           $white;
-$nav-tabs-link-active-border-color: $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-link-active-bg;
-$nav-pills-custom-bg:               #fcfcfd;
-////////   TABS VARIABLES /////////
+////////// BREAD CRUMBS VARIABLES //////////
 
 
+////////// BREAD CRUMBS VARIABLES //////////
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+////////   Toggle Switch  //////////////
+$toggle-switch-bg: #e9ecef;
+////////   CALENDAR  //////////////
 
 ////////// SIDEBAR ////////
-$sidebar-width-lg: 257px;
+$sidebar-width-lg: 240px;
 $sidebar-width-mini: 185px;
 $sidebar-width-icon: 70px;
 
-$sidebar-light-bg: #ffffff;
-$sidebar-light-menu-color: #000;
-$sidebar-light-submenu-color: #656565;
-$sidebar-light-menu-active-bg: initial;
-$sidebar-light-menu-active-color: theme-color(primary);
-$sidebar-light-menu-hover-bg: transparent;
-$sidebar-light-menu-hover-color: theme-color(primary);
-$sidebar-light-submenu-hover-color: $black;
-$sidebar-light-submenu-active-color: $black;
-$sidebar-light-menu-icon-color: inherit;
-$sidebar-light-menu-arrow-color: #000;
+$sidebar-light-bg: #ec37fc;
+$sidebar-light-menu-color: #fff;
+$sidebar-light-submenu-color: #fff;
+$sidebar-light-menu-active-bg: rgba(255, 255, 255, .4);
+$sidebar-light-menu-active-color: #fff;
+$sidebar-light-menu-hover-bg: rgba(255, 255, 255, .4);
+$sidebar-light-menu-hover-color: #fff;
+$sidebar-light-submenu-hover-color: #b10dbf;
+$sidebar-light-submenu-active-color: #b10dbf;
+$sidebar-light-menu-icon-color: #fff;
+$sidebar-light-menu-icon-hover-color: #fff;
+$sidebar-light-menu-arrow-color: #fff;
 $sidebar-light-profile-name-color: #404852;
-$sidebar-light-profile-title-color: #8d9498;
+$sidebar-light-profile-title-color: #8d9498;  
+$sidebar-light-menu-border-color: rgba(255,255,255,.36);
+$sidebar-light-submenu-active-bg: rgba(255,255,255,.4);
+$sidebar-light-submenu-hover-bg: rgba(255,255,255,.4);
+$sidebar-light-submenu-hover-border: $sidebar-light-bg;
+$sidebar-light-submenu-active-border: $sidebar-light-bg;
+$sidebar-light-submenu-bg: transparent;
+
+
 
 $sidebar-menu-font-size: .875rem;
-$sidebar-menu-padding-left: 1.25rem;
-$sidebar-menu-padding-right: 2.5rem;
-$sidebar-menu-padding-top: .75rem;
-$sidebar-menu-padding-bottom: .75rem;
+$sidebar-menu-padding-left: .875rem;
+$sidebar-menu-padding-right: .875rem;
+$sidebar-menu-padding-top: 1rem;
+$sidebar-menu-padding-bottom: 1rem;
 
-$sidebar-submenu-padding: .25rem 0 0.6rem 3.55rem;
+$sidebar-submenu-padding: .25rem 0rem 0 0rem;
 $sidebar-submenu-font-size: .875rem;
-$sidebar-submenu-item-padding: .6rem 1rem;
+$sidebar-submenu-item-padding: 1rem 4rem;
 
 $sidebar-icon-font-size:  1.125rem;
 $sidebar-arrow-font-size: .625rem;
@@ -257,24 +269,38 @@ $sidebar-profile-padding: 0 1.625rem 2.25rem 1.188rem;
 $sidebar-mini-menu-padding: .8125rem 1rem .8125rem 1rem;
 
 $sidebar-icon-only-menu-padding: .5rem 1.625rem .5rem 1.188rem;
-$sidebar-icon-only-submenu-padding: 0 0 0 1.5rem;
+$sidebar-icon-only-submenu-padding: 0 0 0 0;
 
-$sidebar-box-shadow: none;
+$sidebar-box-shadow: 6px 16px 31px -18px #b7bcd1;
 
 $rtl-sidebar-submenu-padding: 0 4.5rem 0 0;
 
 $icon-only-collapse-width: 190px;
-$icon-only-menu-bg-light: $sidebar-light-bg;
+$icon-only-menu-bg-light: #b10dbf;
+
 
 ///////// SIDEBAR ////////
 
+///////// BOXED LAYOUT ///////
+$boxed-container-width: 1200px;
+$boxed-layout-bg: #c6c8ca;
+///////// BOXED LAYOUT ///////
+
+///////// SETTINGS PANEL ////////
+
+$settings-panel-width: 300px;
 
 ///////// NAVBAR ////////
 
-$navbar-default-bg: $white;
+$navbar-default-bg: #fff;
+$navbar-brand-bg: theme-color(primary);
 $navbar-height: 60px;
-$navbar-menu-color: #9b9b9b;
-$navbar-font-size: .875rem;
+$navbar-menu-color: #000000;
+$navbar-font-size: 1rem;
+$navbar-search-color: #666;
 $navbar-icon-font-size: .9375rem;
+$navbar-color: #000000;
+$navbar-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.1);
 
 ///////// NAVBAR ////////
+
