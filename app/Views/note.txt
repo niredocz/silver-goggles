@@ -1,0 +1,4 @@
+classes in index.php
+
+.sidebar -> left sidebar
+
