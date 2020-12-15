@@ -5,7 +5,7 @@
   <!-- Required meta tags --> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Dashboard</title>
+  <title>Tambah Data Siswa</title>
   <!-- base:css -->
   <link rel="stylesheet" href="<?= base_url('assets/vendors/mdi/css/materialdesignicons.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/feather/feather.css')?> ">
@@ -80,7 +80,7 @@
           </div>
         </div>
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Dashboard</span>

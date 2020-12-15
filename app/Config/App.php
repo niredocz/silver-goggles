@@ -21,6 +21,8 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
+	// change it after uploaded in hosting
+	// public $baseURL = 'http://devix-site.000webhostapp.com/';
 	public $baseURL = 'http://localhost:8080/';
 
 	/*

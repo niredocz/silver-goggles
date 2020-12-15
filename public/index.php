@@ -14,6 +14,10 @@ define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
 // Location of the Paths config file.
 // This is the line that might need to be changed, depending on your folder structure.
 $pathsPath = realpath(FCPATH . '../app/Config/Paths.php');
+
+// use this path down below while posted in hosting
+// $pathsPath = realpath(FCPATH . 'ci4app/app/Config/Paths.php');
+
 // ^^^ Change this if you move your application folder
 
 /*

@@ -5,7 +5,7 @@
   <!-- Required meta tags --> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Dashboard</title>
+  <title>Edit Data Siswa</title>
   <!-- base:css -->
   <link rel="stylesheet" href="<?= base_url('assets/vendors/mdi/css/materialdesignicons.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/feather/feather.css')?> ">
@@ -53,7 +53,10 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
               <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-              <a class="dropdown-item preview-item" href="">
+              <a class="dropdown-item preview-item">               
+                  <i class="icon-head"></i> Profile
+              </a>
+              <a class="dropdown-item preview-item">
                   <i class="icon-inbox"></i> Logout
               </a>
             </div>
@@ -80,7 +83,7 @@
           </div>
         </div>
         <ul class="nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/">
               <i class="icon-box menu-icon"></i>
               <span class="menu-title">Dashboard</span>
@@ -116,17 +119,109 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-xl-12 grid-margin">
-              <div class="card">
-                <div class="card-body">
-                  <div class="col-sm-12 mb-4 mb-xl-0">
-                    <h4 class="font-weight-bold text-dark">Hi, welcome back!</h4>
-                    <p class="font-weight-normal mb-2 text-muted">APRIL 1, 2019</p>
+              <div class="col-xl-12 grid-margin">
+                  <div class="card">
+                    <div class="card-body">
+                    <h4 class="card-title">Striped Table</h4>
+                    <p class="card-description">
+                        Add class <code>.table-striped</code>
+                    </p>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>First name</th>
+                                    <th>Progress</th>
+                                    <th>Amount</th>
+                                    <th>Deadline</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td class="py-1">
+                                    <img src="../../images/faces/face1.jpg" alt="image"/>
+                                </td>
+                                <td>
+                                    Herman Beck
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    $ 77.99
+                                </td>
+                                <td>
+                                    May 15, 2015
+                                </td>
+                                </tr>
+                                <tr>
+                                <td class="py-1">
+                                    <img src="../../images/faces/face2.jpg" alt="image"/>
+                                </td>
+                                <td>
+                                    Messsy Adam
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    $245.30
+                                </td>
+                                <td>
+                                    July 1, 2015
+                                </td>
+                                </tr>
+                                <tr>
+                                <td class="py-1">
+                                    <img src="../../images/faces/face3.jpg" alt="image"/>
+                                </td>
+                                <td>
+                                    John Richards
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    $138.00
+                                </td>
+                                <td>
+                                    Apr 12, 2015
+                                </td>
+                                </tr>
+                                <tr>
+                                <td class="py-1">
+                                    <img src="../../images/faces/face4.jpg" alt="image"/>
+                                </td>
+                                <td>
+                                    Peter Meggik
+                                </td>
+                                <td>
+                                    <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    $ 77.99
+                                </td>
+                                <td>
+                                    May 15, 2015
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
                   </div>
-                </div>
               </div>
-            </div>
           </div>
+          
         </div>
         <!-- content-wrapper ends -->
         
