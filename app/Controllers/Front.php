@@ -8,19 +8,30 @@ class Front extends BaseController {
 	}
 
 	public function edit_form() {
-		return view('pages/edit_data');
+		$data['title'] = "Edit Data Siswa";
+
+		echo view('pages/edit_data', $data);
 	}
 
 	public function add_form() {
-		return view('pages/add_data');
+		$data['title'] = "Tambah Data Siswa";
+
+		echo view('pages/add_data', $data);
 	}
 
 	public function show_form() {
-		return view('pages/show_data');
+		$data['title'] = "Tampil Data Siswa";
+
+		echo view('pages/show_data', $data);
 	}
 
 	public function report_form() {
-		return view('pages/report');
+		$data['title'] = "Report";
+
+		echo view('pages/report', $data);
 	}
 
+	public function test() {
+		return view('pages/test');
+	}
 }

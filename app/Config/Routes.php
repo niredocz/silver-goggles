@@ -35,6 +35,7 @@ $routes->get('/tambah', 'Front::add_form');
 $routes->get('/tampil', 'Front::show_form');
 $routes->get('/edit', 'Front::edit_form');
 $routes->get('/report', 'Front::report_form');
+$routes->get('/test', 'Front::test');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

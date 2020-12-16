@@ -2,29 +2,24 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags --> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Tambah Data Siswa</title>
+  <title><?=$title?></title>
   <!-- base:css -->
   <link rel="stylesheet" href="<?= base_url('assets/vendors/mdi/css/materialdesignicons.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/feather/feather.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/base/vendor.bundle.base.css')?> ">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
   <link rel="stylesheet" href="<?= base_url('assets/vendors/flag-icon-css/css/flag-icon.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/font-awesome/css/font-awesome.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars-o.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars.css')?> ">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?> ">
-  <!-- endinject -->
   <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png')?> "/>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
+    <!-- Navbar -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/logo.svg')?>" alt="logo"/></a>
@@ -59,25 +54,17 @@
             </div>
           </li>
         </ul> -->
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="icon-menu"></span>
-        </button>
       </div>
     </nav>
-    <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
+    <!-- Sidebar -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="user-profile">
           <div class="user-image">
             <img src="<?= base_url('assets/images/faces/face28.png')?> ">
           </div>
-          <div class="user-name">
-              Edward Spencer
-          </div>
-          <div class="user-designation">
-              Developer
-          </div>
+          <div class="user-name">Edward Spencer</div>
+          <div class="user-designation">Developer</div>
         </div>
         <ul class="nav">
           <li class="nav-item">
@@ -112,7 +99,7 @@
           </li>
         </ul>
       </nav>
-      <!-- partial -->
+      <!-- Start Main Content -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
@@ -120,8 +107,86 @@
               <div class="card">
                 <div class="card-body">
                   <div class="col-sm-12 mb-4 mb-xl-0">
-                    <h4 class="font-weight-bold text-dark">Hi, welcome back!</h4>
-                    <p class="font-weight-normal mb-2 text-muted">APRIL 1, 2019</p>
+                    <h4 class="card-title">Tambah Data Siswa</h4>
+                    <p class="card-description">Formulir tambah data siswa</p>
+                    <form class="forms-sample">
+                      <div class="form-group row">
+                        <label for="nis" class="col-sm-3 col-form-label">NIS</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="nis" placeholder="Nomor Induk Siswa">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="nama_siswa" class="col-sm-3 col-form-label">Nama Lengkap Siswa</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="nama_siswa" placeholder="Nama Lengkap">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Tempat/Tanggal Lahir</label>
+                        <div class="col-sm-9">
+                          <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                              <input type="text" class="form-control" id="datepicker" placeholder="Tanggal Lahir">
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6">
+                              <input type="text" class="form-control" id="alternate" readonly>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Sekolah Asal</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="exampleInputMobile" placeholder="Sekolah Asal">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
+                        <div class="col-sm-9">
+                          <textarea class="form-control" id="alamat" rows="6"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <label for="gender" class="col-form-label">Jenis Kelamin (Pilih salah satu)</label>
+                            <!-- <select class="form-control" id="gender">
+                              <option value="L">Laki-Laki</option>
+                              <option value="P">Perempuan</option>
+                            </select> -->
+                          <div class="row">
+                            <div class="form-check col-sm-3">
+                              <label class="form-check-label">
+                                <input checked type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="L">
+                                Laki-laki
+                              </label>
+                            </div>
+                            <div class="form-check col-sm-3">
+                              <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="P">
+                                Perempuan
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <label for="agama" class="col-form-label">Agama</label>
+                            <select class="form-control" id="agama">
+                              <option value="islam">Islam</option>
+                              <option value="kristen">Kristen</option>
+                              <option value="katolik">Katolik</option>
+                              <option value="hindu">Hindu</option>
+                              <option value="buddha">Buddha</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="form-check form-check-flat form-check-primary">
+                        <label class="form-check-label">
+                          <input type="checkbox" class="form-check-input">Remember me</label>
+                      </div>
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-light">Cancel</button>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -144,10 +209,9 @@
   <!-- container-scroller -->
 
   <!-- base:js -->
+  <script src="<?= base_url('js/jquery.min.js')?> "></script>
+  <script src="<?= base_url('js/bootstrap.min.js')?> "></script>
   <script src="<?= base_url('assets/vendors/base/vendor.bundle.base.js')?> "></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="<?= base_url('assets/js/off-canvas.js')?> "></script>
   <script src="<?= base_url('assets/js/hoverable-collapse.js')?> "></script>
@@ -156,10 +220,25 @@
   <!-- plugin js for this page -->
   <script src="<?= base_url('assets/vendors/chart.js/Chart.min.js')?> "></script>
   <script src="<?= base_url('assets/vendors/jquery-bar-rating/jquery.barrating.min.js')?> "></script>
-  <!-- End plugin js for this page -->
-  <!-- Custom js for this page-->
+  <!-- Custom JS-->
   <script src="<?= base_url('assets/js/dashboard.js')?> "></script>
-  <!-- End custom js for this page-->
+  <!-- Datepicker CDN -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="<?= base_url('assets/jquery-ui/jquery-ui.min.js')?> "></script>
+  <script src="<?= base_url('js/datepicker-id.js')?>" type="text/javascript"></script>
+  <script>
+      $(document).ready(function(){
+        $( "#datepicker" ).datepicker({
+          altField: "#alternate",
+          dateFormat: "yy-mm-dd",
+          altFormat: "DD, d MM yy",
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "-25:+0",
+          autoSize: true
+          });
+      })
+</script>
 </body>
 
 </html>
