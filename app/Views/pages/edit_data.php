@@ -119,103 +119,56 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-              <div class="col-xl-12 grid-margin">
-                  <div class="card">
-                    <div class="card-body">
-                    <h4 class="card-title">Striped Table</h4>
-                    <p class="card-description">
-                        Add class <code>.table-striped</code>
-                    </p>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>First name</th>
-                                    <th>Progress</th>
-                                    <th>Amount</th>
-                                    <th>Deadline</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <td class="py-1">
-                                    <img src="../../images/faces/face1.jpg" alt="image"/>
-                                </td>
-                                <td>
-                                    Herman Beck
-                                </td>
-                                <td>
-                                    <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    $ 77.99
-                                </td>
-                                <td>
-                                    May 15, 2015
-                                </td>
-                                </tr>
-                                <tr>
-                                <td class="py-1">
-                                    <img src="../../images/faces/face2.jpg" alt="image"/>
-                                </td>
-                                <td>
-                                    Messsy Adam
-                                </td>
-                                <td>
-                                    <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    $245.30
-                                </td>
-                                <td>
-                                    July 1, 2015
-                                </td>
-                                </tr>
-                                <tr>
-                                <td class="py-1">
-                                    <img src="../../images/faces/face3.jpg" alt="image"/>
-                                </td>
-                                <td>
-                                    John Richards
-                                </td>
-                                <td>
-                                    <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    $138.00
-                                </td>
-                                <td>
-                                    Apr 12, 2015
-                                </td>
-                                </tr>
-                                <tr>
-                                <td class="py-1">
-                                    <img src="../../images/faces/face4.jpg" alt="image"/>
-                                </td>
-                                <td>
-                                    Peter Meggik
-                                </td>
-                                <td>
-                                    <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    $ 77.99
-                                </td>
-                                <td>
-                                    May 15, 2015
-                                </td>
-                                </tr>
-                            </tbody>
-                        </table>
+            <div class="col-xl-12 grid-margin">
+              <div class="card">
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>NISN</th>
+                          <th>Nama Lengkap</th>
+                          <th>Tempat/Tanggal Lahir</th>
+                          <th>Asal Sekolah</th>
+                          <th>Alamat Tinggal</th>
+                          <th>Jenis Kelamin</th>
+                          <th>Agama</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach($data_siswa as $row): ?>
+                        <tr>
+                          <td><?=$row->nis;?></td>
+                          <td><?=$row->nama;?></td>
+                          <td><?=$row->tempat_lahir;?></td>
+                          <td><?=$row->tanggal_lahir;?></td>
+                          <td><?=$row->asal_sekolah;?></td>
+                          <td><?=$row->alamat;?></td>
+                          <td><?=$row->jenis_kelamin;?></td>
+                          <td><?=$row->nama_agama;?></td>
+                          <td>Edit</td>
+                          <!-- <td>Delete</td> -->
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr>
+                          <td>99809882010</td>
+                          <td>Herman Beck</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </td>
+                          <td>$ 77.99</td>
+                          <td>May 15, 2015</td>
+                          <td>Laki</td>
+                          <td>Hindu</td>
+                          <td>Edit</td>
+                          <td>Delete</td>
+                        </tr>
+                      </tbody>
+                    </table>
                     </div>
                     </div>
                   </div>

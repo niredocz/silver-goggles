@@ -1,7 +1,5 @@
 <?php
-
 namespace Config;
-
 use CodeIgniter\Config\AutoloadConfig;
 
 /**
@@ -16,7 +14,8 @@ use CodeIgniter\Config\AutoloadConfig;
  */
 class Autoload extends AutoloadConfig
 {
-
+	// public $psr4 = [];
+	// public $classmap = [];
 	/**
 	 * -------------------------------------------------------------------
 	 * Namespaces
@@ -40,10 +39,12 @@ class Autoload extends AutoloadConfig
 	 * @var array
 	 */
 	public $psr4 = [
+		// 'App' => APPATH, // ensure filters
 		APP_NAMESPACE => APPPATH, // For custom app namespace
 		'Config'      => APPPATH . 'Config',
 	];
-
+	// $session = \Config\Services::session($config);
+	// $autoload['libraries'] = array('database','session');
 	/**
 	 * -------------------------------------------------------------------
 	 * Class Map

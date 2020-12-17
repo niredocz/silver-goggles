@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars-o.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?> ">
-  <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png')?> "/>
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png')?> "/>
 </head>
 <body>
   <div class="container-scroller">
@@ -127,10 +127,10 @@
                         <div class="col-sm-9">
                           <div class="row">
                             <div class="col-sm-6 col-md-6 col-lg-6">
-                              <input type="text" class="form-control" id="datepicker" placeholder="Tanggal Lahir">
+                              <input type="text" class="form-control" id="tempat_lahir" placeholder="Tempat">
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
-                              <input type="text" class="form-control" id="alternate" readonly>
+                              <input type="text" class="form-control" id="datepicker" placeholder="Tanggal Lahir">
                             </div>
                           </div>
                         </div>
@@ -157,13 +157,13 @@
                           <div class="row">
                             <div class="form-check col-sm-3">
                               <label class="form-check-label">
-                                <input checked type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="L">
+                                <input checked type="radio" class="form-check-input" name="gender" id="laki" value="L">
                                 Laki-laki
                               </label>
                             </div>
                             <div class="form-check col-sm-3">
                               <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="P">
+                                <input type="radio" class="form-check-input" name="gender" id="perempuan" value="P">
                                 Perempuan
                               </label>
                             </div>
@@ -180,12 +180,10 @@
                             </select>
                         </div>
                       </div>
-                      <div class="form-check form-check-flat form-check-primary">
-                        <label class="form-check-label">
-                          <input type="checkbox" class="form-check-input">Remember me</label>
+                      <div class="float-right">
+                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button class="btn btn-light">Cancel</button>
                       </div>
-                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                      <button class="btn btn-light">Cancel</button>
                     </form>
                   </div>
                 </div>
@@ -193,16 +191,16 @@
             </div>
           </div>
         </div>
-        <!-- content-wrapper ends -->
+      <!-- End of Main Content -->
         
-        <!-- Footer -->
+      <!-- Footer -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Daffa Aldzakian F 2020</span>
           </div>
         </footer>
       </div>
-      <!-- main-panel ends -->
+      <!-- Footer ends -->
     </div>
     <!-- page-body-wrapper ends -->
   </div>
@@ -217,11 +215,6 @@
   <script src="<?= base_url('assets/js/hoverable-collapse.js')?> "></script>
   <script src="<?= base_url('assets/js/template.js')?> "></script>
   <!-- endinject -->
-  <!-- plugin js for this page -->
-  <script src="<?= base_url('assets/vendors/chart.js/Chart.min.js')?> "></script>
-  <script src="<?= base_url('assets/vendors/jquery-bar-rating/jquery.barrating.min.js')?> "></script>
-  <!-- Custom JS-->
-  <script src="<?= base_url('assets/js/dashboard.js')?> "></script>
   <!-- Datepicker CDN -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="<?= base_url('assets/jquery-ui/jquery-ui.min.js')?> "></script>
@@ -229,8 +222,9 @@
   <script>
       $(document).ready(function(){
         $( "#datepicker" ).datepicker({
-          altField: "#alternate",
-          dateFormat: "yy-mm-dd",
+          // altField: "#alternate",
+          // dateFormat: "yy-mm-dd",
+          dateFormat: "dd-mm-yy",
           altFormat: "DD, d MM yy",
           changeMonth: true,
           changeYear: true,
