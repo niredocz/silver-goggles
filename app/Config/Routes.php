@@ -31,9 +31,8 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Front::index');
-$routes->get('/tambah', 'Front::add_form');
-$routes->get('/tampil', 'Front::show_form');
-$routes->get('/edit', 'Front::edit_form');
+$routes->get('/tambah', 'Front::register_form');
+$routes->get('/edit', 'Front::table_siswa');
 $routes->get('/report', 'Front::report_form');
 $routes->get('/test', 'Front::test');
 /**
