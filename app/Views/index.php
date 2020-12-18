@@ -46,19 +46,6 @@
             </div>
           </li>
         </ul>
-        <!-- <ul class="navbar-nav navbar-nav-right">   
-          <li class="nav-item dropdown d-flex mr-4 ">
-            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="icon-cog"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-              <a class="dropdown-item preview-item" href="">
-                  <i class="icon-inbox"></i> Logout
-              </a>
-            </div>
-          </li>
-        </ul> -->
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
         </button>
@@ -90,12 +77,6 @@
             <a class="nav-link" href="<?= base_url('/tambah')?>">
               <i class="icon-square-plus menu-icon"></i>
               <span class="menu-title">Tambah Data Siswa</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/tampil')?>">
-              <i class="icon-monitor menu-icon"></i>
-              <span class="menu-title">Tampil Data Siswa</span>
             </a>
           </li>
           <li class="nav-item">

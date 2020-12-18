@@ -19,7 +19,7 @@
 </head>
 <body>
   <div class="container-scroller">
-    <!-- Navbar -->
+    <!-- Start Navbar -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/logo.svg')?>" alt="logo"/></a>
@@ -41,19 +41,6 @@
             </div>
           </li>
         </ul>
-        <!-- <ul class="navbar-nav navbar-nav-right">   
-          <li class="nav-item dropdown d-flex mr-4 ">
-            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="icon-cog"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-              <a class="dropdown-item preview-item" href="">
-                  <i class="icon-inbox"></i> Logout
-              </a>
-            </div>
-          </li>
-        </ul> -->
       </div>
     </nav>
     <div class="container-fluid page-body-wrapper">
@@ -77,12 +64,6 @@
             <a class="nav-link" href="<?= base_url('/tambah')?>">
               <i class="icon-square-plus menu-icon"></i>
               <span class="menu-title">Tambah Data Siswa</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/tampil')?>">
-              <i class="icon-monitor menu-icon"></i>
-              <span class="menu-title">Tampil Data Siswa</span>
             </a>
           </li>
           <li class="nav-item">
@@ -111,9 +92,9 @@
                     <p class="card-description">Formulir tambah data siswa</p>
                     <form class="forms-sample">
                       <div class="form-group row">
-                        <label for="nis" class="col-sm-3 col-form-label">NIS</label>
+                        <label for="nisn" class="col-sm-3 col-form-label">NISN</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="nis" placeholder="Nomor Induk Siswa">
+                          <input type="text" class="form-control" id="nisn" placeholder="Nomor Induk Siswa Nasional">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -150,10 +131,6 @@
                       <div class="form-group row">
                         <div class="col-sm-6">
                           <label for="gender" class="col-form-label">Jenis Kelamin (Pilih salah satu)</label>
-                            <!-- <select class="form-control" id="gender">
-                              <option value="L">Laki-Laki</option>
-                              <option value="P">Perempuan</option>
-                            </select> -->
                           <div class="row">
                             <div class="form-check col-sm-3">
                               <label class="form-check-label">
