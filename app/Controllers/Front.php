@@ -10,32 +10,33 @@ class Front extends BaseController {
 		echo view('index', $data);
 	}
 
-	public function edit_form() {
+	public function table_siswa() {
 		$data['title'] = "Edit Data Siswa";
-		// $model = new Product_model();
-        // $data = array(
-        //     'product_name'        => $this->request->getPost('product_name'),
-        //     'product_price'       => $this->request->getPost('product_price'),
-        //     'product_category_id' => $this->request->getPost('product_category'),
-        // );
-        // $model->saveProduct($data);
-		// return redirect()->to('/product');
+		
 		$model = new Datasiswa_model();
 		$data['data_siswa'] = $model->get_data_siswa()->getResult();
+		$data['gender'] = $model->get_gender()->getResult();
 		$data['agama'] = $model->get_agama()->getResult();
 		echo view('pages/edit_data', $data);
 	}
 
-	public function add_form() {
+	public function update() {
+		$model = new Datasiswa_model();
+		$id = $this->request->getPost('nisn');
+        $data = array(
+            'nama' => $this->request->getPost('nama'),
+            // 'tempat_tgl_lahir' => $this->request->getPost('ttl'),
+            'asal_sekolah' => $this->request->getPost('asal_sekolah'),
+            'id_gender' => $this->request->getPost('id_gender'),
+            'id_agama' => $this->request->getPost('id_agama')
+		);
+        $model->edit_data_siswa($data, $id);
+		return redirect()->to('/edit');
+	}
+	public function register_form() {
 		$data['title'] = "Tambah Data Siswa";
 
 		echo view('pages/add_data', $data);
-	}
-
-	public function show_form() {
-		$data['title'] = "Tampil Data Siswa";
-
-		echo view('pages/show_data', $data);
 	}
 
 	public function report_form() {
