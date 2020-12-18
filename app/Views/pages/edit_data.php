@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags --> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title><?=$title?></title>
@@ -10,21 +9,17 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendors/mdi/css/materialdesignicons.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/feather/feather.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/base/vendor.bundle.base.css')?> ">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
   <link rel="stylesheet" href="<?= base_url('assets/vendors/flag-icon-css/css/flag-icon.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/font-awesome/css/font-awesome.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars-o.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars.css')?> ">
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?> ">
-  <!-- endinject -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png')?> "/>
 </head>
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
+    <!-- Start Navbar -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/logo.svg')?>" alt="logo"/></a>
@@ -46,41 +41,21 @@
             </div>
           </li>
         </ul>
-        <!-- <ul class="navbar-nav navbar-nav-right">   
-          <li class="nav-item dropdown d-flex mr-4 ">
-            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="icon-cog"></i>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Settings</p>
-              <a class="dropdown-item preview-item">               
-                  <i class="icon-head"></i> Profile
-              </a>
-              <a class="dropdown-item preview-item">
-                  <i class="icon-inbox"></i> Logout
-              </a>
-            </div>
-          </li>
-        </ul> -->
         <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
           <span class="icon-menu"></span>
         </button>
       </div>
     </nav>
-    <!-- partial -->
+    <!-- End Navbar -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
+      <!-- Start Sidebar -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="user-profile">
           <div class="user-image">
             <img src="<?= base_url('assets/images/faces/face28.png')?> ">
           </div>
-          <div class="user-name">
-              Edward Spencer
-          </div>
-          <div class="user-designation">
-              Developer
-          </div>
+          <div class="user-name">Edward Spencer</div>
+          <div class="user-designation">Developer</div>
         </div>
         <ul class="nav">
           <li class="nav-item">
@@ -92,123 +67,178 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/tambah')?>">
               <i class="icon-square-plus menu-icon"></i>
-              <span class="menu-title">Tambah Data Siswa</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/tampil')?>">
-              <i class="icon-monitor menu-icon"></i>
-              <span class="menu-title">Tampil Data Siswa</span>
+              <span class="menu-title">Daftar Siswa Baru</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/edit')?>">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Edit Data Siswa</span>
+              <span class="menu-title">Tabel Data Siswa</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/report')?>">
               <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Form Laporan</span>
+              <span class="menu-title">Cetak Laporan</span>
             </a>
           </li>
         </ul>
       </nav>
-      <!-- partial -->
+      <!-- End Navbar -->
+      <!-- Start Main Content -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
             <div class="col-xl-12 grid-margin">
               <div class="card">
-                <div class="card-body">
+                <div class="card-body" style="width: 100%;">
+                  <h4 class="card-title">Tabel Data Siswa</h4>
+                  <p class="card-description">Tabel informasi data siswa</p>
                   <div class="table-responsive">
-                    <table class="table table-striped">
+                    <table class="table table-striped table-hover">
                       <thead>
                         <tr>
-                          <th>NISN</th>
-                          <th>Nama Lengkap</th>
-                          <th>Tempat/Tanggal Lahir</th>
-                          <th>Asal Sekolah</th>
-                          <th>Alamat Tinggal</th>
-                          <th>Jenis Kelamin</th>
-                          <th>Agama</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
+                          <th class="text-center">NISN</th>
+                          <th class="text-center">Nama Lengkap</th>
+                          <th class="text-center">Tempat/Tanggal Lahir</th>
+                          <th class="text-center">Asal Sekolah</th>
+                          <th class="text-center">Alamat Tinggal</th>
+                          <th class="text-center">Jenis Kelamin</th>
+                          <th class="text-center">Agama</th>
+                          <th colspan="2" class="text-center">Action</th>
+                          <!-- <th class="text-center">Delete</th> -->
                         </tr>
                       </thead>
                       <tbody>
                         <?php foreach($data_siswa as $row): ?>
                         <tr>
-                          <td><?=$row->nis;?></td>
+                          <td><?=$row->nisn;?></td>
                           <td><?=$row->nama;?></td>
-                          <td><?=$row->tempat_lahir;?></td>
-                          <td><?=$row->tanggal_lahir;?></td>
+                          <td><?=$row->tempat_tgl_lahir;?></td>
                           <td><?=$row->asal_sekolah;?></td>
                           <td><?=$row->alamat;?></td>
-                          <td><?=$row->jenis_kelamin;?></td>
+                          <td><?=$row->nama_gender;?></td>
                           <td><?=$row->nama_agama;?></td>
-                          <td>Edit</td>
-                          <!-- <td>Delete</td> -->
+                          <td style="padding:5px"><a href="#" class="btn btn-info btn-sm btn-edit" data-nisn="<?= $row->nisn;?>" data-nama="<?= $row->nama;?>" data-tempat="<?= $row->tempat_lahir;?>" data-tanggal="<?= $row->tanggal_lahir;?>" data-sekolah="<?= $row->asal_sekolah;?>" data-alamat="<?= $row->alamat;?>" data-gender="<?= $row->nama_gender;?>" data-agama="<?= $row->nama_agama;?>">Edit</a></td>
+                          <td style="padding:5px"><a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $row->nisn;?>">Delete</a></td>
                         </tr>
                         <?php endforeach; ?>
-                        <tr>
-                          <td>99809882010</td>
-                          <td>Herman Beck</td>
-                          <td>
-                            <div class="progress">
-                              <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </td>
-                          <td>$ 77.99</td>
-                          <td>May 15, 2015</td>
-                          <td>Laki</td>
-                          <td>Hindu</td>
-                          <td>Edit</td>
-                          <td>Delete</td>
-                        </tr>
                       </tbody>
                     </table>
-                    </div>
-                    </div>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
-          
         </div>
-        <!-- content-wrapper ends -->
-        
-        <!-- Footer -->
+        <!-- Start Footer -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Daffa Aldzakian F 2020</span>
           </div>
         </footer>
+        <!-- End Footer -->
       </div>
-      <!-- main-panel ends -->
+      <!-- End Main Content -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-
+  <form action="/front/update" method="post">
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editDataModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="titleEdit">Edit Data Siswa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Nama Lengkap Siswa</label>
+                    <input type="text" class="form-control nama_siswa" name="nama_siswa" placeholder="Nama Lengkap Siswa">
+                </div>
+                <div class="form-group">
+                    <label>Nomor Induk Siswa Nasional</label>
+                    <input type="text" class="form-control nisn_siswa" name="nisn" placeholder="NISN">
+                </div>
+                <div class="form-group">
+                    <label>Tempat/Tanggal Lahir</label>
+                    <!-- <input type="text" class="form-control tempat_tgl_lahir" name="tempat_tgl_lahir" placeholder="Tempat/Tanggal Lahir"> -->
+                    <div class="row">
+                      <div class="col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" class="form-control tempat_lahir" id="tempat_lahir" placeholder="Tempat">
+                      </div>
+                      <div class="col-sm-6 col-md-6 col-lg-6">
+                        <input type="text" class="form-control tanggal_lahir" id="datepicker" placeholder="Tanggal Lahir">
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Asal Sekolah</label>
+                    <input type="text" class="form-control sekolah" name="sekolah" placeholder="Asal Sekolah">
+                </div>
+                <div class="form-group">
+                    <label>Alamat Tinggal</label>
+                    <textarea class="form-control alamat" name="alamat" rows="6"></textarea>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                      <label>Jenis Kelamin</label>
+                      <select name="jenis_kelamin" class="form-control jenis_kelamin">
+                          <option value="">-Select-</option>
+                          <?php foreach($gender as $row): ?>
+                          <option value="<?= $row->id_gender?>"><?= $row->nama_gender;?></option>
+                          <?php endforeach; ?>
+                      </select>
+                  </div>
+                  <div class="form-group col-sm-6">
+                      <label>Agama</label>
+                      <select name="agama" class="form-control agama">
+                          <option value="">-Select-</option>
+                          <?php foreach($agama as $row): ?>
+                          <option value="<?= $row->id_agama?>"><?= $row->nama_agama;?></option>
+                          <?php endforeach; ?>
+                      </select>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="product_id" class="product_id">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+            </div>
+        </div>
+        </div>
+    </form>
   <!-- base:js -->
+  <script src="<?= base_url('js/jquery.min.js')?> "></script>
   <script src="<?= base_url('assets/vendors/base/vendor.bundle.base.js')?> "></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
   <script src="<?= base_url('assets/js/off-canvas.js')?> "></script>
   <script src="<?= base_url('assets/js/hoverable-collapse.js')?> "></script>
   <script src="<?= base_url('assets/js/template.js')?> "></script>
-  <!-- endinject -->
-  <!-- plugin js for this page -->
-  <script src="<?= base_url('assets/vendors/chart.js/Chart.min.js')?> "></script>
-  <script src="<?= base_url('assets/vendors/jquery-bar-rating/jquery.barrating.min.js')?> "></script>
-  <!-- End plugin js for this page -->
+
   <!-- Custom js for this page-->
-  <script src="<?= base_url('assets/js/dashboard.js')?> "></script>
+  <script src="<?= base_url('js/edit_script.js')?>"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src=" //base_url('assets/jquery-ui/jquery-ui.min.js') "></script>
+  <script src=" //base_url('js/datepicker-id.js')" type="text/javascript"></script> -->
+  <!-- <script>
+    $('.tanggal_lahir').click(function() {
+      // datepicker for tanggal lahir
+      $( "#datepicker" ).datepicker({
+          // altField: "#alternate",
+          // dateFormat: "yy-mm-dd",
+          dateFormat: "dd-mm-yy",
+          altFormat: "DD, d MM yy",
+          changeMonth: true,
+          changeYear: true,
+          yearRange: "-25:+0",
+          autoSize: true
+      });
+    });
+  </script> -->
   <!-- End custom js for this page-->
 </body>
 
 </html>
-
