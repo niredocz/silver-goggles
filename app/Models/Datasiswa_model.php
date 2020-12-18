@@ -6,18 +6,27 @@ class Datasiswa_model extends Model {
 
     public function get_data_siswa() {
         $data = $this->db->table('data_siswa');
-        $data->select('data_siswa.*, agama.nama_agama');
+        $data->select("data_siswa.*,
+                    CONCAT(data_siswa.tempat_lahir,', ',data_siswa.tanggal_lahir) as tempat_tgl_lahir, 
+                    gender.nama_gender,
+                    agama.nama_agama");
+        $data->join('gender', 'gender.id_gender = data_siswa.id_gender','left');
         $data->join('agama', 'agama.id_agama = data_siswa.id_agama','left');
         return $data->get();
     }
-    
+
+    public function get_gender() {
+        $data = $this->db->table('gender');
+        return $data->get();
+    }
+
     public function get_agama() {
         $data = $this->db->table('agama');
         return $data->get();
     }
 
     public function edit_data_siswa($data, $id) {
-        $query = $this->db->table('data_siswa')->update($data, array('nis' => $id));
+        $query = $this->db->table('data_siswa')->update($data, array('nisn' => $id));
         return $query;
     }
 
@@ -27,7 +36,7 @@ class Datasiswa_model extends Model {
     }
 
     public function hapus_data_siswa($id) {
-        $query = $this->db->table('data_siswa')->delete(array('nis' => $id));
+        $query = $this->db->table('data_siswa')->delete(array('nisn' => $id));
         return $query;
     }
 
