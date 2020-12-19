@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?> ">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css"> -->
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
   <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png')?> "/>
 </head>
 <body>
@@ -114,12 +118,12 @@
                         <tr>
                           <td><?=$row->nisn;?></td>
                           <td><?=$row->nama;?></td>
-                          <td><?=$row->tempat_tgl_lahir;?></td>
+                          <td><?=$row->tempat_lahir .', '. date('d-m-Y', strtotime($row->tanggal_lahir))?></td>
                           <td><?=$row->asal_sekolah;?></td>
                           <td><?=$row->alamat;?></td>
                           <td><?=$row->nama_gender;?></td>
                           <td><?=$row->nama_agama;?></td>
-                          <td style="padding:5px"><a href="#" class="btn btn-info btn-sm btn-edit" data-nisn="<?= $row->nisn;?>" data-nama="<?= $row->nama;?>" data-tempat="<?= $row->tempat_lahir;?>" data-tanggal="<?= $row->tanggal_lahir;?>" data-sekolah="<?= $row->asal_sekolah;?>" data-alamat="<?= $row->alamat;?>" data-gender="<?= $row->nama_gender;?>" data-agama="<?= $row->nama_agama;?>">Edit</a></td>
+                          <td style="padding:5px"><a href="#" class="btn btn-info btn-sm btn-edit" data-nisn="<?= $row->nisn;?>" data-nama="<?= $row->nama;?>" data-tempat="<?= $row->tempat_lahir;?>" data-tanggal="<?= $row->tanggal_lahir;?>" data-sekolah="<?= $row->asal_sekolah;?>" data-alamat="<?= $row->alamat;?>" data-gender="<?= $row->id_gender;?>" data-agama="<?= $row->id_agama;?>">Edit</a></td>
                           <td style="padding:5px"><a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $row->nisn;?>">Delete</a></td>
                         </tr>
                         <?php endforeach; ?>
@@ -142,6 +146,7 @@
       <!-- End Main Content -->
     </div>
   </div>
+  <!-- Start Edit Content -->
   <form action="/front/update" method="post">
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editDataModal" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -166,10 +171,10 @@
                     <!-- <input type="text" class="form-control tempat_tgl_lahir" name="tempat_tgl_lahir" placeholder="Tempat/Tanggal Lahir"> -->
                     <div class="row">
                       <div class="col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" class="form-control tempat_lahir" id="tempat_lahir" placeholder="Tempat">
+                        <input type="text" class="form-control tempat_lahir" name="tempat_lahir" placeholder="Tempat">
                       </div>
                       <div class="col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" class="form-control tanggal_lahir" id="datepicker" placeholder="Tanggal Lahir">
+                        <input type="date" class="form-control tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir">
                       </div>
                     </div>
                 </div>
@@ -203,41 +208,52 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <input type="hidden" name="product_id" class="product_id">
+                <input type="hidden" name="nisn_siswa" class="nisn_siswa">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- End Edit Content -->
+    <!-- Start Delete Content -->
+    <form action="/front/delete" method="post">
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            
+               <h4>Apakah anda yakin ingin menghapus data siswa ini?</h4>
+            
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="product_id" class="productID">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="submit" class="btn btn-primary">Yes</button>
             </div>
             </div>
         </div>
         </div>
     </form>
+    <!-- End Delete Content -->
   <!-- base:js -->
   <script src="<?= base_url('js/jquery.min.js')?> "></script>
+  <script src="<?= base_url('js/bootstrap.min.js')?> "></script>
   <script src="<?= base_url('assets/vendors/base/vendor.bundle.base.js')?> "></script>
+  <!-- inject:js -->
   <script src="<?= base_url('assets/js/off-canvas.js')?> "></script>
   <script src="<?= base_url('assets/js/hoverable-collapse.js')?> "></script>
   <script src="<?= base_url('assets/js/template.js')?> "></script>
 
   <!-- Custom js for this page-->
   <script src="<?= base_url('js/edit_script.js')?>"></script>
-  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src=" //base_url('assets/jquery-ui/jquery-ui.min.js') "></script>
-  <script src=" //base_url('js/datepicker-id.js')" type="text/javascript"></script> -->
-  <!-- <script>
-    $('.tanggal_lahir').click(function() {
-      // datepicker for tanggal lahir
-      $( "#datepicker" ).datepicker({
-          // altField: "#alternate",
-          // dateFormat: "yy-mm-dd",
-          dateFormat: "dd-mm-yy",
-          altFormat: "DD, d MM yy",
-          changeMonth: true,
-          changeYear: true,
-          yearRange: "-25:+0",
-          autoSize: true
-      });
-    });
-  </script> -->
   <!-- End custom js for this page-->
 </body>
 
