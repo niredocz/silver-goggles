@@ -10990,14 +10990,14 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #e811fb;
-  border-color: #e705fb;
+  background-color: #54a0ff;
+  border-color: #54a0ff;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #e811fb;
-  border-color: #e705fb;
+  background-color: #54a0ff;
+  border-color: #54a0ff;
   box-shadow: 0 0 0 0.2rem rgba(239, 85, 252, 0.5);
 }
 
@@ -11010,8 +11010,8 @@ fieldset:disabled .ajax-upload-dragdrop a.ajax-file-upload,
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #e705fb;
-  border-color: #dc04f0;
+  background-color: #54a0ff;
+  border-color: #54a0ff;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -13570,7 +13570,7 @@ a.badge:hover, a.badge:focus {
 
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
-  background-color: #e705fb;
+  background-color: #54a0ff;
 }
 
 a.badge-primary:focus, a.badge-primary.focus {
@@ -15061,7 +15061,7 @@ a.close.disabled {
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #e705fb !important;
+  background-color: #54a0ff !important;
 }
 
 .bg-secondary {

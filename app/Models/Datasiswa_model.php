@@ -6,10 +6,7 @@ class Datasiswa_model extends Model {
 
     public function get_data_siswa() {
         $data = $this->db->table('data_siswa');
-        $data->select("data_siswa.*,
-                    CONCAT(data_siswa.tempat_lahir,', ',data_siswa.tanggal_lahir) as tempat_tgl_lahir, 
-                    gender.nama_gender,
-                    agama.nama_agama");
+        $data->select("data_siswa.*, gender.nama_gender, agama.nama_agama");
         $data->join('gender', 'gender.id_gender = data_siswa.id_gender','left');
         $data->join('agama', 'agama.id_agama = data_siswa.id_agama','left');
         return $data->get();
