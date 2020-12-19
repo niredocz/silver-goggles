@@ -24,15 +24,23 @@ class Front extends BaseController {
 		$model = new Datasiswa_model();
 		$id = $this->request->getPost('nisn');
         $data = array(
-            'nama' => $this->request->getPost('nama'),
+			'nama' => $this->request->getPost('nama_siswa'),
+			'tempat_lahir' => $this->request->getPost('tempat_lahir'),
+			'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
             // 'tempat_tgl_lahir' => $this->request->getPost('ttl'),
-            'asal_sekolah' => $this->request->getPost('asal_sekolah'),
-            'id_gender' => $this->request->getPost('id_gender'),
-            'id_agama' => $this->request->getPost('id_agama')
+            'asal_sekolah' => $this->request->getPost('sekolah'),
+            'alamat' => $this->request->getPost('alamat'),
+            'id_gender' => $this->request->getPost('jenis_kelamin'),
+            'id_agama' => $this->request->getPost('agama')
 		);
         $model->edit_data_siswa($data, $id);
 		return redirect()->to('/edit');
 	}
+
+	public function delete() {
+		$model = new Datasiswa_model();
+	}
+
 	public function register_form() {
 		$data['title'] = "Tambah Data Siswa";
 
