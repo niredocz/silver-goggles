@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +14,7 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?> ">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png')?> "/>
+  <link rel="shortcut icon" href="<?= base_url('assets/images/mini-nav-logo.png')?> "/>
 </head>
 <body>
   <div class="container-scroller">
@@ -90,17 +89,17 @@
                   <div class="col-sm-12 mb-4 mb-xl-0">
                     <h4 class="card-title">Tambah Data Siswa</h4>
                     <p class="card-description">Formulir tambah data siswa</p>
-                    <form class="forms-sample">
+                    <form action="/front/save" method="post">
                       <div class="form-group row">
                         <label for="nisn" class="col-sm-3 col-form-label">NISN</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="nisn" placeholder="Nomor Induk Siswa Nasional">
+                          <input type="text" class="form-control" name="nisn_siswa" id="nisn" placeholder="Nomor Induk Siswa Nasional" required oninvalid="this.setCustomValidity('NISN wajib diisi')" oninput="this.setCustomValidity('')">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="nama_siswa" class="col-sm-3 col-form-label">Nama Lengkap Siswa</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="nama_siswa" placeholder="Nama Lengkap">
+                          <input type="text" class="form-control" name="nama_siswa" id="nama_siswa" placeholder="Nama Lengkap" required oninvalid="this.setCustomValidity('Nama lengkap belum terisi')" oninput="this.setCustomValidity('')">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -108,10 +107,10 @@
                         <div class="col-sm-9">
                           <div class="row">
                             <div class="col-sm-6 col-md-6 col-lg-6">
-                              <input type="text" class="form-control" id="tempat_lahir" placeholder="Tempat">
+                              <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" placeholder="Tempat"  required oninvalid="this.setCustomValidity('Tempat lahir belum terisi')" oninput="this.setCustomValidity('')">
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6">
-                              <input type="text" class="form-control" id="datepicker" placeholder="Tanggal Lahir">
+                              <input type="text" class="form-control" name="tanggal_lahir" id="datepicker" placeholder="Tanggal Lahir"  required oninvalid="this.setCustomValidity('Tanggal lahir belum terisi')" oninput="this.setCustomValidity('')">
                             </div>
                           </div>
                         </div>
@@ -119,13 +118,13 @@
                       <div class="form-group row">
                         <label for="exampleInputMobile" class="col-sm-3 col-form-label">Sekolah Asal</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" id="exampleInputMobile" placeholder="Sekolah Asal">
+                          <input type="text" class="form-control" name="sekolah" id="exampleInputMobile" placeholder="Sekolah Asal"  required oninvalid="this.setCustomValidity('Asal sekolah belum terisi')" oninput="this.setCustomValidity('')">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
                         <div class="col-sm-9">
-                          <textarea class="form-control" id="alamat" rows="6"></textarea>
+                          <textarea class="form-control" name="alamat" id="alamat" rows="6"></textarea>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -134,13 +133,13 @@
                           <div class="row">
                             <div class="form-check col-sm-3">
                               <label class="form-check-label">
-                                <input checked type="radio" class="form-check-input" name="gender" id="laki" value="L">
-                                Laki-laki
+                                <input type="radio" class="form-check-input" name="jenis_kelamin" value="10001" checked>
+                                Laki - laki
                               </label>
                             </div>
                             <div class="form-check col-sm-3">
                               <label class="form-check-label">
-                                <input type="radio" class="form-check-input" name="gender" id="perempuan" value="P">
+                                <input type="radio" class="form-check-input" name="jenis_kelamin" value="10002">
                                 Perempuan
                               </label>
                             </div>
@@ -148,18 +147,16 @@
                         </div>
                         <div class="col-sm-6">
                           <label for="agama" class="col-form-label">Agama</label>
-                            <select class="form-control" id="agama">
-                              <option value="islam">Islam</option>
-                              <option value="kristen">Kristen</option>
-                              <option value="katolik">Katolik</option>
-                              <option value="hindu">Hindu</option>
-                              <option value="buddha">Buddha</option>
+                            <select class="form-control" name="agama" id="agama" required oninvalid="this.setCustomValidity('Mohon pilih salah satu pada opsi ini')" oninput="this.setCustomValidity('')">
+                              <option value="" selected disabled>- Pilih salah satu -</option>
+                              <?php foreach($agama as $row):?>  
+                              <option value="<?= $row->id_agama;?>"><?= $row->nama_agama;?></option>
+                              <?php endforeach;?>
                             </select>
                         </div>
                       </div>
                       <div class="float-right">
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
-                        <button class="btn btn-light">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Kirim Data</button>
                       </div>
                     </form>
                   </div>
