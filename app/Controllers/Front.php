@@ -20,29 +20,54 @@ class Front extends BaseController {
 		echo view('pages/edit_data', $data);
 	}
 
-	public function update() {
+	public function save() {
 		$model = new Datasiswa_model();
-		$id = $this->request->getPost('nisn');
-        $data = array(
+		$data = array(
 			'nama' => $this->request->getPost('nama_siswa'),
+			'nisn' => $this->request->getPost('nisn_siswa'),
 			'tempat_lahir' => $this->request->getPost('tempat_lahir'),
 			'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
-            // 'tempat_tgl_lahir' => $this->request->getPost('ttl'),
             'asal_sekolah' => $this->request->getPost('sekolah'),
             'alamat' => $this->request->getPost('alamat'),
             'id_gender' => $this->request->getPost('jenis_kelamin'),
             'id_agama' => $this->request->getPost('agama')
 		);
+
+		$model->simpan_data_siswa($data);
+		return redirect()->to('/tambah');
+	}
+
+	public function update() {
+		$model = new Datasiswa_model();
+		$id = $this->request->getPost('nisn_siswa');
+        $data = array(
+			'nama' => $this->request->getPost('nama_siswa'),
+			'tempat_lahir' => $this->request->getPost('tempat_lahir'),
+			'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
+            'asal_sekolah' => $this->request->getPost('sekolah'),
+            'alamat' => $this->request->getPost('alamat'),
+            'id_gender' => $this->request->getPost('jenis_kelamin'),
+            'id_agama' => $this->request->getPost('agama')
+		);
+
         $model->edit_data_siswa($data, $id);
 		return redirect()->to('/edit');
 	}
 
 	public function delete() {
 		$model = new Datasiswa_model();
+		$id = $this->request->getPost('nisn_siswa');
+
+        $model->hapus_data_siswa($id);
+        return redirect()->to('/edit');
 	}
 
 	public function register_form() {
-		$data['title'] = "Tambah Data Siswa";
+		$model = new Datasiswa_model();
+		$data = array(
+			'title' => 'Tambah Data Siswa',
+			'agama' => $model->get_agama()->getResult()
+		);
 
 		echo view('pages/add_data', $data);
 	}
