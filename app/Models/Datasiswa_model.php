@@ -22,19 +22,19 @@ class Datasiswa_model extends Model {
         return $data->get();
     }
 
-    public function edit_data_siswa($data, $id) {
-        $query = $this->db->table('data_siswa')->update($data, array('nisn' => $id));
-        return $query;
-    }
-
     public function simpan_data_siswa($data) {
         $query = $this->db->table('data_siswa')->insert($data);
         return $query;
     }
 
+    public function edit_data_siswa($data, $id) {
+        $data = $this->db->table('data_siswa')->update($data, array('nisn' => $id));
+        return $data;
+    }
+
     public function hapus_data_siswa($id) {
-        $query = $this->db->table('data_siswa')->delete(array('nisn' => $id));
-        return $query;
+        $data = $this->db->table('data_siswa')->delete(array('nisn' => $id));
+        return $data;
     }
 
 }
