@@ -37,4 +37,15 @@ $(document).ready(function() {
         // Call Modal Edit
         $('#deleteModal').modal('show');
     });
+
+    $( "#datepicker" ).datepicker({
+        // altField: "#alternate",
+        // dateFormat: "yy-mm-dd",
+        dateFormat: "dd-mm-yy",
+        altFormat: "DD, d MM yy",
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-25:+0",
+        autoSize: true
+    });
 });
