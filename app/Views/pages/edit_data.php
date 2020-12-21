@@ -124,7 +124,7 @@
                           <td><?=$row->nama_gender;?></td>
                           <td><?=$row->nama_agama;?></td>
                           <td style="padding:5px"><a href="#" class="btn btn-info btn-sm btn-edit" data-nisn="<?= $row->nisn;?>" data-nama="<?= $row->nama;?>" data-tempat="<?= $row->tempat_lahir;?>" data-tanggal="<?= $row->tanggal_lahir;?>" data-sekolah="<?= $row->asal_sekolah;?>" data-alamat="<?= $row->alamat;?>" data-gender="<?= $row->id_gender;?>" data-agama="<?= $row->id_agama;?>">Edit</a></td>
-                          <td style="padding:5px"><a href="#" class="btn btn-danger btn-sm btn-delete" data-id="<?= $row->nisn;?>">Delete</a></td>
+                          <td style="padding:5px"><a href="#" class="btn btn-danger btn-sm btn-delete" data-nisn="<?= $row->nisn;?>">Hapus</a></td>
                         </tr>
                         <?php endforeach; ?>
                       </tbody>
@@ -149,22 +149,22 @@
   <!-- Start Edit Content -->
   <form action="/front/update" method="post">
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editDataModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+          <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="titleEdit">Edit Data Siswa</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="titleEdit">Edit Data Siswa</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
                 <div class="form-group">
                     <label>Nama Lengkap Siswa</label>
                     <input type="text" class="form-control nama_siswa" name="nama_siswa" placeholder="Nama Lengkap Siswa">
                 </div>
                 <div class="form-group">
                     <label>Nomor Induk Siswa Nasional</label>
-                    <input type="text" class="form-control nisn_siswa" name="nisn" placeholder="NISN">
+                    <input type="text" class="form-control nisn_siswa" name="nisn" placeholder="NISN"  readonly>
                 </div>
                 <div class="form-group">
                     <label>Tempat/Tanggal Lahir</label>
@@ -206,40 +206,38 @@
                       </select>
                   </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <input type="hidden" name="nisn_siswa" class="nisn_siswa">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Update</button>
+              </div>
+              <div class="modal-footer">
+                  <input type="hidden" name="nisn_siswa" class="nisn_siswa">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
     </form>
     <!-- End Edit Content -->
     <!-- Start Delete Content -->
     <form action="/front/delete" method="post">
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-            
-               <h4>Apakah anda yakin ingin menghapus data siswa ini?</h4>
-            
-            </div>
-            <div class="modal-footer">
-                <input type="hidden" name="product_id" class="productID">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="submit" class="btn btn-primary">Yes</button>
-            </div>
-            </div>
-        </div>
+        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteDataModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Hapus Data Siswa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <h6 class="text-center">Apakah anda yakin ingin menghapus data siswa ini?</h6>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="nisn_siswa" class="nisn_siswa">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Hapus Data</button>
+                </div>
+              </div>
+          </div>
         </div>
     </form>
     <!-- End Delete Content -->
