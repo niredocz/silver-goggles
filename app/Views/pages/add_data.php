@@ -21,8 +21,8 @@
     <!-- Start Navbar -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/logo.svg')?>" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/logo-mini.svg')?>" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/nav-logo.png')?>" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/mini-nav-logo.png')?>" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -40,17 +40,20 @@
             </div>
           </li>
         </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
       </div>
     </nav>
+    <!-- End Navbar -->
     <div class="container-fluid page-body-wrapper">
-    <!-- Sidebar -->
+      <!-- Start Sidebar -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="user-profile">
           <div class="user-image">
-            <img src="<?= base_url('assets/images/faces/face28.png')?> ">
+            <img src="<?= base_url('assets/images/user-icon.png')?> ">
+            <div class="user-name">Adminku</div>
           </div>
-          <div class="user-name">Edward Spencer</div>
-          <div class="user-designation">Developer</div>
         </div>
         <ul class="nav">
           <li class="nav-item">
@@ -62,19 +65,19 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/tambah')?>">
               <i class="icon-square-plus menu-icon"></i>
-              <span class="menu-title">Tambah Data Siswa</span>
+              <span class="menu-title">Daftar Siswa Baru</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/edit')?>">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Edit Data Siswa</span>
+              <span class="menu-title">Tabel Data Siswa</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?= base_url('/report')?>">
               <i class="icon-paper menu-icon"></i>
-              <span class="menu-title">Form Laporan</span>
+              <span class="menu-title">Cetak Laporan</span>
             </a>
           </li>
         </ul>
