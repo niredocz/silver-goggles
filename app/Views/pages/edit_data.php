@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,19 +14,15 @@
   <link rel="stylesheet" href="<?= base_url('assets/vendors/jquery-bar-rating/fontawesome-stars.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/css/style.css')?> ">
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/css/bootstrap-datepicker.min.css"> -->
-  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-  <link rel="shortcut icon" href="<?= base_url('assets/images/favicon.png')?> "/>
+  <link rel="shortcut icon" href="<?= base_url('assets/images/mini-nav-logo.png')?> "/>
 </head>
 <body>
   <div class="container-scroller">
     <!-- Start Navbar -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/logo.svg')?>" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/logo-mini.svg')?>" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/nav-logo.png')?>" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/mini-nav-logo.png')?>" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -56,10 +51,9 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="user-profile">
           <div class="user-image">
-            <img src="<?= base_url('assets/images/faces/face28.png')?> ">
+            <img src="<?= base_url('assets/images/user-icon.png')?> ">
+            <div class="user-name">Adminku</div>
           </div>
-          <div class="user-name">Edward Spencer</div>
-          <div class="user-designation">Developer</div>
         </div>
         <ul class="nav">
           <li class="nav-item">
@@ -168,13 +162,12 @@
                 </div>
                 <div class="form-group">
                     <label>Tempat/Tanggal Lahir</label>
-                    <!-- <input type="text" class="form-control tempat_tgl_lahir" name="tempat_tgl_lahir" placeholder="Tempat/Tanggal Lahir"> -->
                     <div class="row">
                       <div class="col-sm-6 col-md-6 col-lg-6">
                         <input type="text" class="form-control tempat_lahir" name="tempat_lahir" placeholder="Tempat">
                       </div>
                       <div class="col-sm-6 col-md-6 col-lg-6">
-                        <input type="date" class="form-control tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir">
+                        <input type="text" id="datepicker" class="form-control tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir">
                       </div>
                     </div>
                 </div>
@@ -251,6 +244,9 @@
   <script src="<?= base_url('assets/js/template.js')?> "></script>
 
   <!-- Custom js for this page-->
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+  <script src="<?= base_url('assets/jquery-ui/jquery-ui.min.js')?> "></script>
+  <script src="<?= base_url('js/datepicker-id.js')?>" type="text/javascript"></script>
   <script src="<?= base_url('js/edit_script.js')?>"></script>
   <!-- End custom js for this page-->
 </body>
