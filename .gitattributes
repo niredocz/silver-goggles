@@ -4,7 +4,6 @@
 * linguist-vendored
 *.php linguist-vendored=false
 *.html linguist-vendored=false
-*.js linguist-vendored=false
 *.hack linguist-vendored=false
 *.scss linguist-vendored=false
 #
