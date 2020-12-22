@@ -1,8 +1,7 @@
 *.gitattributes text
 .gitignore      text
 *.md            text
-* linguist-vendored
-*.php linguist-vendored=false
+
 #
 # Exclude files from exporting
 #
