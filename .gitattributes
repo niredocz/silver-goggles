@@ -1,17 +1,7 @@
-*.gitattributes text
-.gitignore      text
-*.md            text
-
 public/assets/* linguist-vendored
+*.php linguist-vendored=false
+*.html linguist-vendored=false
+*.hack linguist-vendored=false
+*.scss linguist-vendored=false
+*.js linguist-vendored=false
 
-#
-# Exclude files from exporting
-#
-
-.gitattributes  export-ignore
-.gitignore      export-ignore
-
-#
-# Enable syntax highlighting for files with `.gitattributes` extensions.
-#
-*.gitattributes linguist-language=gitattributes
