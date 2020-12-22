@@ -63,5 +63,8 @@ class Autoload extends AutoloadConfig
 	 *
 	 * @var array
 	 */
-	public $classmap = [];
+	public $classmap = [
+		'PHPExcel' => APPPATH.'ThirdParty/PHPExcel/PHPExcel.php', //library PHPExcel
+		'Mpdf' => __DIR__ . '/vendor/autoload.php', //library mPDF
+	];
 }
