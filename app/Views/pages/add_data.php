@@ -63,19 +63,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/tambah')?>">
+            <a class="nav-link" href="<?= base_url('/registrasi')?>">
               <i class="icon-square-plus menu-icon"></i>
               <span class="menu-title">Daftar Siswa Baru</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/edit')?>">
+            <a class="nav-link" href="<?= base_url('/tabel-siswa')?>">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Tabel Data Siswa</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/report')?>">
+            <a class="nav-link" href="<?= base_url('/cetak-laporan')?>">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Cetak Laporan</span>
             </a>
@@ -92,7 +92,7 @@
                   <div class="col-sm-12 mb-4 mb-xl-0">
                     <h4 class="card-title">Tambah Data Siswa</h4>
                     <p class="card-description">Formulir tambah data siswa</p>
-                    <form action="/front/save" method="post">
+                    <form action="/front/save" method="post" autocomplete="off">
                       <div class="form-group row">
                         <label for="nisn" class="col-sm-3 col-form-label">NISN</label>
                         <div class="col-sm-9">
@@ -121,7 +121,7 @@
                       <div class="form-group row">
                         <label for="exampleInputMobile" class="col-sm-3 col-form-label">Sekolah Asal</label>
                         <div class="col-sm-9">
-                          <input type="text" class="form-control" name="sekolah" id="exampleInputMobile" placeholder="Sekolah Asal"  required oninvalid="this.setCustomValidity('Asal sekolah belum terisi')" oninput="this.setCustomValidity('')">
+                          <input type="text" class="form-control" name="sekolah" id="sekolah" placeholder="Sekolah Asal"  required oninvalid="this.setCustomValidity('Asal sekolah belum terisi')" oninput="this.setCustomValidity('')">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -193,23 +193,10 @@
   <script src="<?= base_url('assets/js/template.js')?> "></script>
   <!-- endinject -->
   <!-- Datepicker CDN -->
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   <script src="<?= base_url('assets/jquery-ui/jquery-ui.min.js')?> "></script>
   <script src="<?= base_url('js/datepicker-id.js')?>" type="text/javascript"></script>
-  <script>
-      $(document).ready(function(){
-        $( "#datepicker" ).datepicker({
-          // altField: "#alternate",
-          // dateFormat: "yy-mm-dd",
-          dateFormat: "dd-mm-yy",
-          altFormat: "DD, d MM yy",
-          changeMonth: true,
-          changeYear: true,
-          yearRange: "-25:+0",
-          autoSize: true
-          });
-      })
-</script>
+  <script src="<?= base_url('js/script.js')?>"></script>
 </body>
 
 </html>

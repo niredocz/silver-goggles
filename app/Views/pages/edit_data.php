@@ -63,19 +63,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/tambah')?>">
+            <a class="nav-link" href="<?= base_url('/registrasi')?>">
               <i class="icon-square-plus menu-icon"></i>
               <span class="menu-title">Daftar Siswa Baru</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/edit')?>">
+            <a class="nav-link" href="<?= base_url('/tabel-siswa')?>">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Tabel Data Siswa</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/report')?>">
+            <a class="nav-link" href="<?= base_url('/cetak-laporan')?>">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Cetak Laporan</span>
             </a>
@@ -90,8 +90,8 @@
             <div class="col-xl-12 grid-margin">
               <div class="card">
                 <div class="card-body" style="width: 100%;">
-                  <h4 class="card-title">Tabel Data Siswa</h4>
-                  <p class="card-description">Tabel informasi data siswa</p>
+                  <h5 class="font-weight-bold text-dark">Tabel Data Siswa</h5>
+                  <p class="card-description">Menampilkan informasi seluruh data siswa SMAN 01 Surakarta</p>
                   <div class="table-responsive">
                     <table class="table table-striped table-hover">
                       <thead>
@@ -104,7 +104,6 @@
                           <th class="text-center">Jenis Kelamin</th>
                           <th class="text-center">Agama</th>
                           <th colspan="2" class="text-center">Action</th>
-                          <!-- <th class="text-center">Delete</th> -->
                         </tr>
                       </thead>
                       <tbody>
@@ -141,7 +140,7 @@
     </div>
   </div>
   <!-- Start Edit Content -->
-  <form action="/front/update" method="post">
+  <form action="/front/update" method="post" autocomplete="off">
         <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editDataModal" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -247,7 +246,7 @@
   <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   <script src="<?= base_url('assets/jquery-ui/jquery-ui.min.js')?> "></script>
   <script src="<?= base_url('js/datepicker-id.js')?>" type="text/javascript"></script>
-  <script src="<?= base_url('js/edit_script.js')?>"></script>
+  <script src="<?= base_url('js/script.js')?>"></script>
   <!-- End custom js for this page-->
 </body>
 

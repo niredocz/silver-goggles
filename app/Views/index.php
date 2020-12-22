@@ -62,19 +62,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/tambah')?>">
+            <a class="nav-link" href="<?= base_url('/registrasi')?>">
               <i class="icon-square-plus menu-icon"></i>
               <span class="menu-title">Daftar Siswa Baru</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/edit')?>">
+            <a class="nav-link" href="<?= base_url('/tabel-siswa')?>">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Tabel Data Siswa</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?= base_url('/report')?>">
+            <a class="nav-link" href="<?= base_url('/cetak-laporan')?>">
               <i class="icon-paper menu-icon"></i>
               <span class="menu-title">Cetak Laporan</span>
             </a>
@@ -89,8 +89,10 @@
               <div class="card">
                 <div class="card-body">
                   <div class="col-sm-12 mb-4 mb-xl-0">
-                    <h4 class="font-weight-bold text-dark">Hi, welcome back!</h4>
-                    <p class="font-weight-normal mb-2 text-muted">APRIL 1, 2019</p>
+                    <h4 class="font-weight-bold text-dark">Hai, Selamat datang di SMA Negeri 01 Surakarta!</h4>
+                    <br>
+                    <p class="font-weight-normal mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SMAN 01 Surakarta adalah salah satu sekolah favorit di Surakarta. Lulusan kami sangat berkualitas sehingga banyak dari mereka yang memainkan peran penting di tingkat pemerintahan.</p>
+                    <p class="font-weight-normal mb-2 text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SMAN 01 Surakarta senantiasa melakukan pembenahan di segala aspek, khususnya sumber daya manusianya. Kami meningkatkan kapasitas guru dan anggota staf kami dengan menyediakan program pelatihan dan pengembangan. Kami juga ingin meningkatkan fasilitas sekolah kami, seperti laboratorium, Teknologi Informasi dan Komunikasi (TIK), olahraga dan seni serta fasilitas lain yang dapat mendukung proses belajar mengajar di SMAN 1 Surakarta.</p>
                   </div>
                 </div>
               </div>
