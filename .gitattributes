@@ -1,3 +1,5 @@
 public/assets/* linguist-vendored
 public/js/* linguist-vendored
 public/js/script.js linguist-vendored=false
+public/js/bootstrap.min.js linguist-vendored=false
+public/js/datepicker-id.js linguist-vendored=false
