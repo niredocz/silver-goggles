@@ -93,7 +93,7 @@
                     <p class="font-weight-normal mb-2 text-muted">Silahkan klik tombol <strong>Download PDF</strong> untuk mencetak laporan pada tabel dibawah ini dalam format PDF</p>
                     <div class="d-flex flex-row-reverse bd-highlight">
                       <!-- <button class="btn btn-primary pdf">Download PDF</button> -->
-                      <a href="<?php echo base_url('/pdf') ?>">Generate</a>
+                      <a href="<?php echo base_url('/pdf') ?>" class="btn btn-primary pdf">Download PDF</a>
                     </div>
                     <div class="table-responsive">
                       <table class="table table-striped table-hover" id="printContent">

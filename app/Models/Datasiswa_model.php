@@ -1,5 +1,6 @@
-<?php namespace App\Models;
+<?php 
 
+namespace App\Models;
 use CodeIgniter\Model;
 
 class Datasiswa_model extends Model {
