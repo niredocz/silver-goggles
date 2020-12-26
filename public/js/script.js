@@ -49,7 +49,8 @@ $(document).ready(function() {
         autoSize: true
     });
 
-    $('.pdf').on('click', function() {
-        window.location = "<?php echo base_url('Front/report_form') ?>";
-    })
+    $('.pdf-dom').on('click', function() {
+        window.print();
+        event.preventDefault();
+    });
 });
