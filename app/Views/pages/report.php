@@ -18,7 +18,7 @@
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row d-print-none">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
         <a class="navbar-brand brand-logo" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/nav-logo.png')?>" alt="logo"/></a>
         <a class="navbar-brand brand-logo-mini" href="<?= base_url('/')?> "><img src="<?= base_url('assets/images/mini-nav-logo.png')?>" alt="logo"/></a>
@@ -47,7 +47,7 @@
     <!-- End Navbar -->
     <div class="container-fluid page-body-wrapper">
       <!-- Start Sidebar -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas d-print-none" id="sidebar">
         <div class="user-profile">
           <div class="user-image">
             <img src="<?= base_url('assets/images/user-icon.png')?> ">
@@ -92,8 +92,8 @@
                     <h6 class="font-weight-bold text-dark">Cetak Laporan Data Siswa</h6>
                     <p class="font-weight-normal mb-2 text-muted">Silahkan klik tombol <strong>Download PDF</strong> untuk mencetak laporan pada tabel dibawah ini dalam format PDF</p>
                     <div class="d-flex flex-row-reverse bd-highlight">
-                      <!-- <button class="btn btn-primary pdf">Download PDF</button> -->
-                      <a href="<?php echo base_url('/pdf') ?>" class="btn btn-primary pdf">Download PDF</a>
+                      <!-- <a href="<?php //echo base_url('/pdf') ?>" class="btn btn-primary pdf">Download PDF</a> -->
+                      <a class="btn btn-primary d-print-none pdf-dom" target="_blank">Download PDF</a>
                     </div>
                     <div class="table-responsive">
                       <table class="table table-striped table-hover" id="printContent">
@@ -157,8 +157,16 @@
   <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   <script src="<?= base_url('assets/jquery-ui/jquery-ui.min.js')?> "></script>
   <script src="<?= base_url('js/datepicker-id.js')?>" type="text/javascript"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.umd.min.js"></script> -->
   <script src="<?= base_url('js/script.js')?>"></script>
-  
+  <script>
+    $(document).ready(function() {
+      $('.pdf-dom').on('click', function() {
+        window.print();
+        event.preventDefault();
+      });
+    });
+  </script>
   <!-- End custom js for this page-->
 </body>
 
