@@ -34,8 +34,7 @@ $routes->get('/', 'Front::index');
 $routes->get('/registrasi', 'Front::register_form');
 $routes->get('/tabel-siswa', 'Front::table_siswa');
 $routes->get('/cetak-laporan', 'Front::report_form');
-$routes->get('/pdf', 'Front::generate_pdf');
-$routes->get('/test', 'Front::test');
+// $routes->get('/pdf', 'Front::generate_pdf');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
