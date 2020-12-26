@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Cetak Laporan - SMAN 01 Surakarta</title>
+  <title><?= $title; ?></title>
   <!-- base:css -->
   <link rel="stylesheet" href="<?= base_url('assets/vendors/mdi/css/materialdesignicons.min.css')?> ">
   <link rel="stylesheet" href="<?= base_url('assets/vendors/feather/feather.css')?> ">
@@ -92,7 +92,6 @@
                     <h6 class="font-weight-bold text-dark">Cetak Laporan Data Siswa</h6>
                     <p class="font-weight-normal mb-2 text-muted">Silahkan klik tombol <strong>Download PDF</strong> untuk mencetak laporan pada tabel dibawah ini dalam format PDF</p>
                     <div class="d-flex flex-row-reverse bd-highlight">
-                      <!-- <a href="<?php //echo base_url('/pdf') ?>" class="btn btn-primary pdf">Download PDF</a> -->
                       <a class="btn btn-primary d-print-none pdf-dom" target="_blank">Download PDF</a>
                     </div>
                     <div class="table-responsive">
@@ -148,25 +147,16 @@
   <script src="<?= base_url('js/jquery.min.js')?> "></script>
   <script src="<?= base_url('js/bootstrap.min.js')?> "></script>
   <script src="<?= base_url('assets/vendors/base/vendor.bundle.base.js')?> "></script>
+
   <!-- inject:js -->
   <script src="<?= base_url('assets/js/off-canvas.js')?> "></script>
   <script src="<?= base_url('assets/js/hoverable-collapse.js')?> "></script>
   <script src="<?= base_url('assets/js/template.js')?> "></script>
 
   <!-- Custom js for this page-->
-  <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
   <script src="<?= base_url('assets/jquery-ui/jquery-ui.min.js')?> "></script>
   <script src="<?= base_url('js/datepicker-id.js')?>" type="text/javascript"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.2.0/jspdf.umd.min.js"></script> -->
   <script src="<?= base_url('js/script.js')?>"></script>
-  <script>
-    $(document).ready(function() {
-      $('.pdf-dom').on('click', function() {
-        window.print();
-        event.preventDefault();
-      });
-    });
-  </script>
   <!-- End custom js for this page-->
 </body>
 
