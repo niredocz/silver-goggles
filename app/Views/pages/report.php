@@ -158,6 +158,11 @@
   <script src="<?= base_url('js/datepicker-id.js')?>" type="text/javascript"></script>
   <script src="<?= base_url('js/script.js')?>"></script>
   <!-- End custom js for this page-->
+
+  <!-- The core Firebase JS SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <!-- Firebase Configuration -->
+  <script src="<?= base_url('js/config.js')?>"></script>
 </body>
 
 </html>
