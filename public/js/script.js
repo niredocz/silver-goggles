@@ -49,7 +49,7 @@ $(document).ready(function() {
         autoSize: true
     });
 
-    $('.pdf-dom').on('click', function() {
+    $('.pdf-dom').on('click', function(event) {
         window.print();
         event.preventDefault();
     });
