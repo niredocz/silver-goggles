@@ -15,6 +15,7 @@ Menampilkan data siswa baru dan dapat memanipulasi data siswa (edit data siswa &
 ![edit data 01](https://github.com/niredocz/silver-goggles/blob/master/public/screenshot/edit-data-01.png?raw=true)
 
 Edit Data Form
+
 ![edit data 02](https://github.com/niredocz/silver-goggles/blob/master/public/screenshot/edit-data-02.png?raw=true)
 
 ### Cetak Report
