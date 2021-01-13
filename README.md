@@ -20,7 +20,7 @@ Edit Data Form
 
 ### Cetak Report
 
-Cetak report pdf dengan Mpdf library
+Cetak report PDF
 
 ![cetak data](https://github.com/niredocz/silver-goggles/blob/master/public/screenshot/cetak-data.png?raw=true)
 
